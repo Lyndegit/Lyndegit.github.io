@@ -130,8 +130,8 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">5</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
   </ul>
 </nav>
@@ -180,14 +180,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -321,6 +321,181 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(javascript)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(javascript)/" class="post-title-link" itemprop="url">正则表达式（javascript实现）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-07 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-07T16:13:52+08:00">2021-02-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-21 23:51:02" itemprop="dateModified" datetime="2021-02-21T23:51:02+08:00">2021-02-21</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">前端知识</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>（转自我的csdn）<br>正则表达式是什么？</p>
+<p>比较正规的解释是：正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。<br> 在这里，我希望使用一个更为通俗的自然语言来描述它：正则表达式就是用一类字符的统称来描述这一大批字符。举个例子，正则里说汉字，那么其实它就涵盖了所有的中国文字。<br> 现在你是否明白了正则到底是个什么东西了吧？仍不明白？不要紧，继续往下看，文中会通过一些简单的实例来帮助你对正则的理解。</p>
+<p>为什么要用正则表达式？</p>
+<p>可以这么说，正则表达式能做的，都能够通过正常的编程来实现。那么我们为什么还要学习正则呢？原因很简单：<br> 1）正则表达式能够很大幅度的简化代码，实现起来也更为顺手；<br> 2）用正则表达式去处理字符串，代码更容易理解；<br> 3）通常来说，正则表达式的速度远比自己写逻辑要高很多；</p>
+<p>正则表达式要怎么使用？</p>
+<p>正则表达式具体怎么使用取决于你用什么编程语言，我们先看大家都熟悉的Javascript.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;^[a-z]+$&quot;</span>); <span class="comment">//也可以写成：var reg = /^[a-z]+$/;</span></span><br></pre></td></tr></table></figure>
+<p>^：表示字符串的开始<br> [a-z]：表示任意小写的字母<br> +：表示前边的字母至少出现1次，上不封顶<br> $：表示字符串的结束</p>
+<p>应用一：reg.test(“abcd”) //true<br> 从头到尾都是小写的英文字母，所有匹配成功，返回true</p>
+<p>应用二：reg.test(“8ddde”) //false<br> 因为开头不是字母，所以匹配失败，返回false</p>
+<p>前边所列举都是用正则去检测一个字符串是否是预期的规则，现则我们再用正则去获取一个大字符串中需要的内容。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;正则表达式（Regular Expression）是对字符串操作的一种逻辑公式&quot;</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/[a-zA-z]+/g</span>; <span class="comment">//最后加个“g”表示查找所有符合条件的，不带“g”表示查找第一个符合条件的</span></span><br><span class="line"><span class="keyword">var</span> result = str.match(reg); <span class="comment">//返回的result是一个数组，包含所有查找到的内容</span></span><br><span class="line"><span class="comment">// result[0]: Regular</span></span><br><span class="line"><span class="comment">// result[1]: Expression</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（五）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-06 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-06T16:13:52+08:00">2021-02-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-21 23:44:00" itemprop="dateModified" datetime="2021-02-21T23:44:00+08:00">2021-02-21</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>我们都知道进程是一个独立分配的一个单位，那么该如何实现不同进程之间的通信？</p>
+<p>实现方法：1.利用队列实现通信 2.利用进程池来进行通信</p>
+<p>利用队列的demo（实现方法：使用一个队列来依靠其FIFO特性进行读取）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,Queue</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#写入方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write</span>(<span class="params">q</span>):</span></span><br><span class="line">    a=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">        print(<span class="string">&#x27;开始写入的值：%s&#x27;</span>%i)</span><br><span class="line">        q.put(i)<span class="comment">#数据流入队列</span></span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reader</span>(<span class="params">q</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(q.qsize()):</span><br><span class="line">        print(<span class="string">&#x27;读取到的值：%s&#x27;</span>%q.get())</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Queue()</span><br><span class="line">    pw = Process(target=write(q))</span><br><span class="line">    pr = Process(target=reader(q))</span><br><span class="line">    pw.start()</span><br><span class="line">    pr.start()</span><br><span class="line">    pr.join()</span><br><span class="line">    pw.join()</span><br></pre></td></tr></table></figure>
+<p>利用进程池的demo（<a target="_blank" rel="noopener" href="https://lyndegit.github.io/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">进程池复习</a>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Manager().Queue()</span><br><span class="line">    pool =Pool(<span class="number">3</span>)</span><br><span class="line">    pool.apply(write,(q,))</span><br><span class="line">    pool.apply(reader,(q,))</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br><span class="line"><span class="comment">#write，reader方法与上面一样，需要导入Manager包中的队列</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,7 +527,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 23:22:00" itemprop="dateModified" datetime="2021-02-20T23:22:00+08:00">2021-02-20</time>
+        <time title="修改时间：2021-02-21 16:03:50" itemprop="dateModified" datetime="2021-02-21T16:03:50+08:00">2021-02-21</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -379,8 +554,8 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 <p>Pool可以提供制定数量的进程，供用户调用，当有新的请求提交到pool中时，如果池还没有满，就会创建一个新的进程来执行请求，池中达到最大值时请求会等待阻塞在序列中的进程，直到进程结束才会创建新的进程（池子的逻辑结构类似于一个进程队列）</p>
 <p>基本语法格式（构造方法）：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pool(numprocess[,initializer[,initargs]])<span class="comment">#参数一为进程数二维进程可调用对象三为参数元祖</span></span><br></pre></td></tr></table></figure>
-<p>写一个异步调用进程池的小demo吧！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span>  time</span><br><span class="line"><span class="comment">#进程执行任务函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">msg</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;start:&#x27;</span>,msg)</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">&#x27;end&#x27;</span>,msg)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建进程池</span></span><br><span class="line">    pool = multiprocessing.Pool(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">#添加任务</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">        msg =<span class="string">&#x27;任务%d&#x27;</span>%i</span><br><span class="line">        pool.apply(func,(msg,)) <span class="comment">#调用函数及其参数（异步调用）</span></span><br><span class="line"></span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join() <span class="comment">#等待子进程结束</span></span><br></pre></td></tr></table></figure>
+<p>写一个调用进程池的小demo吧！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span>  time</span><br><span class="line"><span class="comment">#进程执行任务函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">msg</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;start:&#x27;</span>,msg)</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">&#x27;end&#x27;</span>,msg)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建进程池</span></span><br><span class="line">    pool = multiprocessing.Pool(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">#添加任务</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">        msg =<span class="string">&#x27;任务%d&#x27;</span>%i</span><br><span class="line">        pool.apply(func,(msg,)) <span class="comment">#调用函数及其参数</span></span><br><span class="line"></span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join() <span class="comment">#等待子进程结束</span></span><br></pre></td></tr></table></figure>
 
 
 <h3 id="补充：使用继承方式创建进程"><a href="#补充：使用继承方式创建进程" class="headerlink" title="补充：使用继承方式创建进程"></a>补充：使用继承方式创建进程</h3><p>创建进程的方式还可以使用类的方式，通过自定义一个类（个性化定制），继承Procress类，每次实例化这个类时，就等同于实例化一个进程对象。代码示例：</p>
@@ -411,7 +586,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/04/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9Bnpm/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%9B%9B%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avartar.jpg">
@@ -424,7 +599,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/04/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9Bnpm/" class="post-title-link" itemprop="url">关于npm装包时-s和-d的区别</a>
+          <a href="/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%9B%9B%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（四）</a>
         </h2>
 
         <div class="post-meta-container">
@@ -435,100 +610,14 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-02-04 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-04T16:13:52+08:00">2021-02-04</time>
+      <time title="创建时间：2021-02-05 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-05T16:13:52+08:00">2021-02-05</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-19 23:33:36" itemprop="dateModified" datetime="2021-02-19T23:33:36+08:00">2021-02-19</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/npm/" itemprop="url" rel="index"><span itemprop="name">npm</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="keyword">name</span> -<span class="keyword">save</span> 简写（npm install <span class="keyword">name</span> -S） 自动把模块和版本号添加到dependencies。</span><br><span class="line">npm install <span class="keyword">name</span> -<span class="keyword">save</span>-dve 简写（npm install <span class="keyword">name</span> -D） 自动把模块和版本号添加到devdependencies。</span><br></pre></td></tr></table></figure>
-<p>-D后，安装包会在package中的 devDependencies对象中。简称dev。dev是在开发环境中要用到的。</p>
-<p>-S后，安装包会在package中的 dependencies 对象中。简称dep。dep是在生产环境中要用到的。</p>
-<p>举个例子：</p>
-<p>构建工具：gulp和webpack是用来压缩代码，打包等需要的工具，程序实际运行的时候并不需要，就要放在dev中所以要用 -D</p>
-<p>项目插件：例如element ui、echarts这种插件要在运行中使用的，就要放在dep中所以就用 -S</p>
-<p>一般我们项目插件，在api中都可以看到，一般都是-S。因为这些插件是在程序运行中使用的。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/03/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/03/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（二）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-03 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-03T16:13:52+08:00">2021-02-03</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-19 23:27:00" itemprop="dateModified" datetime="2021-02-19T23:27:00+08:00">2021-02-19</time>
+        <time title="修改时间：2021-02-21 23:21:25" itemprop="dateModified" datetime="2021-02-21T23:21:25+08:00">2021-02-21</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -550,91 +639,14 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>———-工厂模式与单例模式———————-<br>一、什么是设计模式？<br>    设计模式是面向对象语言特有的内容，是我们在面临某一类问题时候固定的做法。即：前人总结经验所做出的特定总结性解决方案<br>    初学者最常用两个常用的模式：工厂模式，单例模式<br>二、工厂模式：创建者和调用者分离，使用专门的工厂类将选择实现类、创建对象进行统一的管理<br>    代码实现：</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">CarFactory:  </span>#创建者</span><br><span class="line">	<span class="symbol">def</span> <span class="symbol">creat_car</span>(<span class="symbol">self,<span class="symbol">brand</span></span>):	#创建对象车的方法</span><br><span class="line">		<span class="symbol">if</span> <span class="symbol">brand</span> == &quot;奔驰&quot;:</span><br><span class="line">			<span class="symbol">return</span> <span class="symbol">Benz</span>()</span><br><span class="line">		<span class="symbol">elif</span> <span class="symbol">brand</span> ==&quot;宝马&quot;:</span><br><span class="line">			<span class="symbol">return</span> <span class="symbol">BMW</span>()</span><br><span class="line">		<span class="symbol">elif</span> <span class="symbol">brand</span> == &quot;比亚迪&quot;:</span><br><span class="line">			<span class="symbol">return</span> <span class="symbol">BYD</span>()</span><br><span class="line">		<span class="symbol">else:</span></span><br><span class="line">			<span class="symbol">return</span> &quot;品牌未知&quot;</span><br><span class="line"><span class="symbol">class</span> <span class="symbol">Benz:	</span>#空的汽车品牌类</span><br><span class="line">	<span class="symbol">pass</span></span><br><span class="line"><span class="symbol">class</span> <span class="symbol">BMW:</span></span><br><span class="line">	<span class="symbol">pass</span></span><br><span class="line"><span class="symbol">class</span> <span class="symbol">BYD:</span></span><br><span class="line">	<span class="symbol">pass</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight ini"><figcaption><span>生产汽车</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">factory</span> = CarFactory()  <span class="comment">#调用者</span></span><br><span class="line"><span class="attr">c1</span> = factory.creat_car(<span class="string">&quot;奔驰&quot;</span>) <span class="comment">#返回地址空间</span></span><br><span class="line"><span class="attr">c2</span> = factory.creat_car(<span class="string">&quot;奥拓&quot;</span>)	<span class="comment">#返回“品牌未知”</span></span><br></pre></td></tr></table></figure>
-<p>三、单例模式：核心作用是确保一个类只有一个实例（避免反复调用反复生产，造成资源浪费）并且提供一个方芬该实例的全局访问点。<br>即:单例模式只生成一个实例对象，减少资源开销。当一个对象的产生需要比较多的资源，如读取配置文件，产生其他依赖对象时，可以产生一个“单例对象”，然后永久驻留内存中，从而极大降低开销。<br>    代码实现:<br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span>:</span></span><br><span class="line">	__Obj = <span class="literal">None</span> <span class="comment">#类属性,类对象，默认为空</span></span><br><span class="line">	__init_flag = <span class="literal">True</span> <span class="comment">#默认初始对象的标志</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls,*args,**kwargs</span>):</span></span><br><span class="line">	<span class="keyword">if</span> cls.__Obj ==<span class="literal">None</span>:  <span class="comment">#初始化一个类,并返回</span></span><br><span class="line">		cls.__obj == <span class="built_in">object</span>.__new__(cls)</span><br><span class="line">	<span class="keyword">return</span> cls.__Obj</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name</span>):</span> <span class="comment">#初始化一个实例</span></span><br><span class="line">		<span class="keyword">if</span> MySingleleton.__init_flag:</span><br><span class="line">			print(<span class="string">&quot;init....&quot;</span>)</span><br><span class="line">			self.name = name <span class="comment">#实例属性</span></span><br><span class="line">			MySingleleton.__init_flag = <span class="literal">False</span></span><br><span class="line">			<span class="comment">#使标志开关变为false，只产生一个对象</span></span><br><span class="line">a = MySingleton(<span class="string">&quot;aa&quot;</span>)</span><br><span class="line">b = MySingleton(<span class="string">&quot;bb&quot;</span>)</span><br><span class="line"><span class="comment">#这俩指向同一个对象 a</span></span><br><span class="line">四、工厂模式结合单例模式</span><br><span class="line">	说明：生成一个车间对象加多个车对象</span><br><span class="line">		代码实现：</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarFactory</span>:</span>  <span class="comment">#创建者</span></span><br><span class="line">	__Obj = <span class="literal">None</span> <span class="comment">#类属性,类对象，默认为空</span></span><br><span class="line">	__init_flag = <span class="literal">True</span> <span class="comment">#默认初始对象的标志</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">creat_car</span>(<span class="params">self,brand</span>):</span>	<span class="comment">#创建对象车的方法</span></span><br><span class="line">		<span class="keyword">if</span> brand == <span class="string">&quot;奔驰&quot;</span>:</span><br><span class="line">			<span class="keyword">return</span> Benz()</span><br><span class="line">		<span class="keyword">elif</span> brand ==<span class="string">&quot;宝马&quot;</span>:</span><br><span class="line">			<span class="keyword">return</span> BMW()</span><br><span class="line">		<span class="keyword">elif</span> brand == <span class="string">&quot;比亚迪&quot;</span>:</span><br><span class="line">			<span class="keyword">return</span> BYD()</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&quot;品牌未知&quot;</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls,*args,**kwargs</span>):</span></span><br><span class="line">		<span class="keyword">if</span> cls.__Obj ==<span class="literal">None</span>:  <span class="comment">#初始化一个类,并返回</span></span><br><span class="line">			cls.__obj == <span class="built_in">object</span>.__new__(cls)</span><br><span class="line">		<span class="keyword">return</span> cls.__Obj</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span> <span class="comment">#初始化一个实例</span></span><br><span class="line">		<span class="keyword">if</span> CarFactory.__init_flag:</span><br><span class="line">			print(<span class="string">&quot;init Car Making....&quot;</span>)</span><br><span class="line">			CarFactory.__init_flag = <span class="literal">False</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span>:</span>	<span class="comment">#空的汽车品牌类</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BMW</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BYD</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="comment">#生产汽车</span></span><br><span class="line">factory = CarFactory()  <span class="comment">#调用者</span></span><br><span class="line">c1 = factory.creat_car(<span class="string">&quot;奔驰&quot;</span>) <span class="comment">#返回地址空间</span></span><br><span class="line">c2 = factory.creat_car(<span class="string">&quot;奥拓&quot;</span>)	<span class="comment">#返回“品牌未知”</span></span><br><span class="line">factory2 = CarFactory()</span><br><span class="line">print(factory)</span><br><span class="line">print(factory2)</span><br><span class="line"><span class="comment">#两个对象都是指向factory</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/01/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/01/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（一）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-01 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-01T16:13:52+08:00">2021-02-01</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-09 16:19:16" itemprop="dateModified" datetime="2021-02-09T16:19:16+08:00">2021-02-09</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>py推导式<br>—–推导式具有明显的py风格并且与其他语言有明显得到区别之处——-<br>1.列表推导式<br>    列表推导式生成列表对象，语法demo<br>        [表达式 for item(参数P) in 可迭代对象]<br>    或者:[表达式 for item(参数P) in 可迭代对象 if 条件判断]（嵌套结构）<br>例子：[x for x in range(1,5)]<br>cout&lt;&lt;[1,2,3,4]<br>2.字典推导式<br>    demo（可添加单分支多分支判断结构）生成一个对象：<br>    {key_expression : value_expression for 表达式 in 可迭代对象}<br>    例：统计文本中字符出现次数<br>    my_text= ‘I love you , I love lyn，I love gaoqi’<br>    char_count = {c:my_text.count(c) for c in my_text} //my_text.count 为处理字符个数的函数<br>    char_count<br>cout&lt;&lt;[字符：对应出现次数]<br>3.集合推导式<br>    集合底层是字典，只不过集合只有key没有value （因此不允许重复）<br>    demo:<br>        {表达式 for item in 可迭代对象}<br>4.生成器推导式（生成元祖）<br>    返回一个生成器（迭代器）进而生成元祖<br>    demo:<br>        （表达式 for item in 可迭代对象）<br>    注：一个生成器只能运行一次，第一次迭代可得到数据，第二次迭代发现数据已经没有了</p>
+          <h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><p>进程:是程序运行的过程，是系统进行资源分配和调度的一个独立单位</p>
+<p>线程:是操作系统能够进行调度的最小单位。它被包含在进程之中，是进程中实际运作单位</p>
+<p>关系:一个线程可以创建和撤销另一个线程；同一个进程中多个线程之间可以并发执行，相对进程而言，线程是一个更加接近于执行体的概念，他可以同其他线程共享数据，但拥有自己的栈空间，具有独立的执行序列</p>
+<p>因此我们知道多个进程之间的数据是独立的（不共享），同一进程的线程共享数据（抢占cpu资源）</p>
+<p>进程demo(证明其不同进程间数据不共享)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line">num =<span class="number">10</span> <span class="comment">#全局资源</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work1</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    num +=<span class="number">5</span>;</span><br><span class="line">    print(<span class="string">&#x27;子进程1运行后，num的值&#x27;</span>,num) <span class="comment">#15</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work2</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    num +=<span class="number">20</span>;</span><br><span class="line">    print(<span class="string">&#x27;子进程2运行后，num的值&#x27;</span>, num)<span class="comment">#20</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    print(<span class="string">&#x27;主进程开始执行&#x27;</span>)</span><br><span class="line">    p1=Process(target=work1)</span><br><span class="line">    p2 = Process(target=work2)</span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p1.join()</span><br><span class="line">    p2.join()</span><br><span class="line">    print(<span class="string">&#x27;全局变量num&#x27;</span>,num) <span class="comment">#10</span></span><br></pre></td></tr></table></figure>
+<p>线程demo（证明线程抢占资源）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work1</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100000</span>):</span><br><span class="line">        num +=<span class="number">1</span></span><br><span class="line">    print(<span class="string">&#x27;执行test1函数num的值：&#x27;</span>,num)<span class="comment">#100000</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work2</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100000</span>):</span><br><span class="line">        num += <span class="number">1</span></span><br><span class="line">    print(<span class="string">&#x27;执行test2函数num的值：&#x27;</span>, num)<span class="comment">#175644</span></span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t1 = Thread(target=work1)</span><br><span class="line">    t2 = Thread(target=work2)</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br><span class="line">    t1.join()</span><br><span class="line">    t2.join()</span><br><span class="line">    <span class="comment">#test2中num并不为20000：因为两个函数交替抢占资源进行循环导致循环次数达到后num却不为20000</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -653,6 +665,9 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
 
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 <script>
