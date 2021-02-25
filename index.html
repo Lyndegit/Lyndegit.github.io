@@ -131,7 +131,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a></li>
         <li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
   </ul>
 </nav>
@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -321,6 +321,459 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/10/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AB%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/10/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AB%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（八）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-10 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-10T16:13:52+08:00">2021-02-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-25 16:54:23" itemprop="dateModified" datetime="2021-02-25T16:54:23+08:00">2021-02-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="开发模式：生产者消费者模式"><a href="#开发模式：生产者消费者模式" class="headerlink" title="开发模式：生产者消费者模式"></a>开发模式：生产者消费者模式</h3><p>生产者就是生产数据的线程，消费者就是消费数据的线程，在多线程开发当中，如果生产者处理速度很快，而消费者处理速度很慢，那么生产者就必须等待消费者处理完，才能继续生产数据，同样的道理，如果消费者的处理能力大于生产者，那么消费者就必须等待生产者。为了解决这个问题于是引入生产者和消费者模式</p>
+<p>生产者消费者模式通过一个容器来解决生产者和消费者的强耦合问题，生产者和消费者之间不能直接通信，我们可以通过设置一个队列来进行生产者与消费者之间的通信问题，也就是说，生产者和消费者共享一个队列，生产者生产商品后，会将商品添加到队列中，同理消费者会从队列中取出商品。</p>
+<p>代码demo：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Producter</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">global</span> queue</span><br><span class="line">        count =<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment">#判断队列大小</span></span><br><span class="line">            <span class="keyword">if</span> queue.qsize()&lt;<span class="number">100</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    msg =<span class="string">&#x27;生产第&#x27;</span>+<span class="built_in">str</span>(count)+<span class="string">&#x27;个商品&#x27;</span></span><br><span class="line">                    queue.put(msg)</span><br><span class="line">                    print(msg)</span><br><span class="line">                time.sleep(<span class="number">0.5</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Constumer</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">global</span> queue</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment">#判断队列大小</span></span><br><span class="line">            <span class="keyword">if</span> queue.qsize()&gt;<span class="number">50</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">                    msg =self.name+<span class="string">&#x27;消费&#x27;</span>+queue.get()</span><br><span class="line">                    print(msg)</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    queue =Queue();</span><br><span class="line">    p = Producter()</span><br><span class="line">    c = Constumer()</span><br><span class="line">    p.start()</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    c.start()</span><br></pre></td></tr></table></figure>
+<h3 id="补充：ThreadLocal"><a href="#补充：ThreadLocal" class="headerlink" title="补充：ThreadLocal"></a>补充：ThreadLocal</h3><p>我们知道多线程环境下，每一个线程均可以使用所属进程的全局变量。如果一个线程对全局变量进行了修改，将会影响到其他所有的线程对全局变量的计算操作，从而出现数据混乱，即为脏数据。为了避免多个线程同时对变量进行修改，引入了线程同步机制，通过互斥锁来控制对全局变量的访问（可以参考之前的几篇文章）。所以有时候线程使用局部变量要比全局变量好，因为局部变量只有线程自身可以访问，同一个进程下的其他线程不可访问。Python提供了ThreadLocal变量，它本身是一个全局变量，但是每个线程却可以利用它来保存属于自己的私有数据，这些私有数据对其他线程也是<u>不可见</u>的。</p>
+<p>使用demo：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="comment">#创建ThreadLocal对象</span></span><br><span class="line">local = threading.local()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_student</span>():</span></span><br><span class="line">    student_name = local.name</span><br><span class="line">    print(<span class="string">&#x27;线程名：%s 学生姓名：%s&#x27;</span>%(threading.current_thread().getName(),student_name))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_thread</span>(<span class="params">name</span>):</span></span><br><span class="line">    <span class="comment">#将传入的name值绑定到local的name上</span></span><br><span class="line">    local.name = name</span><br><span class="line">    process_student()</span><br><span class="line"></span><br><span class="line">t1 = threading.Thread(target=process_thread,args=(<span class="string">&#x27;张三&#x27;</span>,),name=<span class="string">&#x27;Thread-A&#x27;</span>)</span><br><span class="line">t2 = threading.Thread(target=process_thread,args=(<span class="string">&#x27;李四&#x27;</span>,),name=<span class="string">&#x27;Thread-B&#x27;</span>)</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/09/Javascript%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/09/Javascript%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">javascript 基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-09 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-09T16:13:52+08:00">2021-02-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-25 15:58:49" itemprop="dateModified" datetime="2021-02-25T15:58:49+08:00">2021-02-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">前端知识</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Javascript的历史来源"><a href="#Javascript的历史来源" class="headerlink" title="Javascript的历史来源"></a>Javascript的历史来源</h2><p>94年网景公司 研发出世界上第一款浏览器。95年 sun公司 java语言诞生网景公司和sun合作。<br> Java+script ===&gt; javascript（JavaScript和ECMAScript的关系）</p>
+<p>简单来说ECMAScript不是一门语言，而是一个标准。符合这个标准的比较常见的有：JavaScript、Action Script（Flash中用的语言）</p>
+<h2 id="JavaScript的基础语法"><a href="#JavaScript的基础语法" class="headerlink" title="JavaScript的基础语法"></a>JavaScript的基础语法</h2><p>变量的声明及使用</p>
+<p>数据类型</p>
+<p>运算符</p>
+<p>逻辑控制语句</p>
+<p>注释</p>
+<p>语法规则</p>
+<p>变量的声明语法：</p>
+<p>var变量名；</p>
+<p>例如：</p>
+<p>Var num;</p>
+<p>然后进行赋值：num = 10;也可以声明时直接赋值：</p>
+<p>Var num =10;</p>
+<p>在JavaScript中，提供了常用的基本数据类型：</p>
+<p>undefined 未定义；</p>
+<p>null 空；</p>
+<p>string 字符串类型；</p>
+<p>boolean 布尔类型；</p>
+<p>number 数值类型；</p>
+<p>运算符：</p>
+<p>算数运算符：+、-、*、/、%、++、–；</p>
+<p>比较运算符：&gt;、&lt;、&gt; =、&lt; =、==、！=；</p>
+<p>逻辑运算符：&amp;&amp;、||、！；</p>
+<p>赋值运算符：=；</p>
+<p>逻辑控制语句：</p>
+<p>JavaScript的逻辑控制语句也分为两类：条件结构和循环机构。</p>
+<p>条件结构</p>
+<p>条件机构分为if结构和switch结构：</p>
+<p>If…else</p>
+<p>Switch</p>
+<p>循环结构</p>
+<p>JavaScript的循环结构的执行顺序与Java类似，主要包括以下几种结构：</p>
+<p>for循环</p>
+<p>while循环</p>
+<p>do…while循环</p>
+<p>for…inx循环</p>
+<p>示例：</p>
+<p>for(var i=0;i&lt;10;i++){</p>
+<p>Document.write(“*”);</p>
+<p>}</p>
+<p>输出结果：**<strong>****</strong></p>
+<p>循环中断：</p>
+<p>用于循环中断的语句有以下两种：</p>
+<p>break.</p>
+<p>continue.</p>
+<p>与Java用法一样，break是跳出循环,continue是跳入下一次循环。</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数有两种：一种是系统函数，一种是自定义函数。</p>
+<p>常用的系统函数包括：</p>
+<p>parseInt():转换为整数。</p>
+<p>parseFloat():转换为浮点型。</p>
+<p>isNaN():判断非数字。</p>
+<p>Eval():计算表达式值。</p>
+<p>自定义函数：</p>
+<p>自定义函数的语法</p>
+<p>function 函数名（参数1,参数2,…）{</p>
+<p>…//语句</p>
+<p>Return 返回值;//可选</p>
+<p>}</p>
+<p>函数的调用：</p>
+<p>函数的调用方式有以下两种</p>
+<p>事件名=函数名（传递的实参值），例如：</p>
+<p>“函数名（）”</p>
+<p>直接使用函数名（传递的实参值），例如：</p>
+<p>var recult = add(2,3);</p>
+<p>匿名函数</p>
+<p>匿名函数的语法</p>
+<p>var sumFun=function(num1,num2){</p>
+<p>…</p>
+<p>return(nun1,num2);</p>
+<p>} ;</p>
+<p>在语法中：</p>
+<p>var sunFun=function(num1,num2)表示声明一个变量等于某个函数体。</p>
+<p>{…}；是把整个函数体放在变量的后面，并把末尾添加一个分号。</p>
+<p>匿名函数的调用:</p>
+<p>由于匿名函数定义的整个语句，可以像赋值一样赋给一个变量进行保存，所以可以使用如下方式调用语法中的匿名函数：</p>
+<p>var sum=sumFun(2,3)</p>
+<h2 id="BOM概述"><a href="#BOM概述" class="headerlink" title="BOM概述"></a>BOM概述</h2><p>使用BOM可以移动窗口，改变状态栏中的文本，执行其他与页面内容不直接相关的动作。它包含的对象主要有以下几种;</p>
+<p>Window对象</p>
+<p>Window对象是指整个窗口对象，可以通过操作Window对象的属性和方法控制窗口，例如，打开或关闭一个窗口。</p>
+<p>History对象</p>
+<p>浏览器访问过的历史页面对应History对象，通过History对象的属性和方法实现浏览器的前进或后退的功能。</p>
+<p>Location对象</p>
+<p>浏览器的地址栏对应Location对象，通过Location对象的属性和方法控制页面跳转。</p>
+<p>Document对象</p>
+<p>浏览器内的网页内容对应Document对象，通过Document对象的属性和方法，控制页面元素。</p>
+<p>Window常用的属性有：</p>
+<p>history：有关客户访问过的URL的信息。</p>
+<p>location:有关当前URL的信息。</p>
+<p>Screen: 有关客户端的屏幕和显示性能的信息。</p>
+<p>Window对象常用的方法：</p>
+<p>prompt():显示可提示用户输入的对话框。</p>
+<p>alert():显示带有一段消息和一个人“确认”按钮的警告框。</p>
+<p>confirm():显示带有一段消息以及“确认”按钮“取消”按钮的对话框。</p>
+<p>close():关闭浏览器窗口。</p>
+<p>open():打开一个新的浏览器窗口，加载给定URL所指定的文档。</p>
+<p>setTimeout():用于在指定（以毫秒计）后调用函数或计算表达式。</p>
+<p>setTneerval():按照指定的周期 （以毫秒计）数来调用函数或计算表达式。</p>
+<p>Window对象常用窗口特征属性</p>
+<p>height、width:窗口文档显示区的高度、宽度，以像素计。</p>
+<p>left、top:窗口的x坐标y坐标，以像素计。</p>
+<p>toolbar:yes|no|1|0:是否显示浏览器的工具栏，默认是yes。</p>
+<p>scrollbars =yes|no|1|0:是否显示滚动条，默认是yes。</p>
+<p>locationyes|no|1|0:是否显示地址栏，默认是yes。</p>
+<p>status|no|1|0:是否添加地址栏，默认是yes。</p>
+<p>menubar|no|1|0:是否显示菜单栏，默认是yes。</p>
+<p>resizable|no|1|0:窗口是否可调节尺寸，默认是yes。</p>
+<p>Window对象的常用事件：</p>
+<p>onload:一个页面或一副图像完成加载。</p>
+<p>onmouseover:鼠标指针移到某元素之上。</p>
+<p>onclick:单击某个对象。</p>
+<p>onkeydown:某个键盘按键被按下。</p>
+<p>onchange:域的内容被改变。</p>
+<p>History对象的方法：</p>
+<p>back():加载History对象列表中的上一个URL。</p>
+<p>forward():加载History对象列表中的下一个URL。</p>
+<p>go():加载History对象列表中的某个具体URL。</p>
+<p>Location对象的属性：</p>
+<p>host：设置或返回主机名和当前URL的端口号。</p>
+<p>hostname:设置或返回当前URL的主机名。</p>
+<p>href:设置或返回完整的URL。</p>
+<p>Location对象的方法：</p>
+<p>reload():重新加载当前文档。</p>
+<p>replace():用新的文档替换当前文档。</p>
+<p>Document对象常用的属性：</p>
+<p>referrer:返回载入当前文档的URL。</p>
+<p>URL：返回当前文档的URL。</p>
+<p>Document对象的常用方法：</p>
+<p>getElementById():返回对拥有指定id的第一个对象的引用。</p>
+<p>getElementsByName():返回带有指定名称的对象的集合。</p>
+<p>getElementsByTagName():返回带有指定标签名的对象的集合。</p>
+<p>write():向文档写文本、HTML表达式代码。</p>
+<p>内置对象</p>
+<p>系统的内置对象有Date对象、Array对象、String对象和Math对象等。</p>
+<p>Date:用于操作日期和时间。</p>
+<p>Array:用于在单独的变量名中储存一系列的值。</p>
+<p>String:用于支持对字符串的处理。</p>
+<p>Math:用于执行数学任务，包含了若干数字常量和函数。</p>
+<p>Date对象：</p>
+<p>1:创建日期对象</p>
+<p>Date对象包含日期和时间两个信息，创建日期对象的基本语法有两种：</p>
+<p>创建日期的基本语法1： var 日期实例化=new Date(参数);</p>
+<p>创建日期的基本语法2： var 日期实例化=new Date();</p>
+<p>Date对象的常用方法：</p>
+<p>getDate():从Date对象返回一个月中的某一天，其值介于1到31之间。</p>
+<p>getDay():从Date对象返回星期中的某一天，其值介于0到6之间。</p>
+<p>getHours():返回Date对象的小时，其值介于0到23之间。</p>
+<p>getMinutes():返回Date对象的分钟，其值介于0到59之间。</p>
+<p>getSeconds():返回Date对象的秒数，其值介于0到59之间。</p>
+<p>getMonth():返回Date对象的月份，其值介于0到11之间。</p>
+<p>getFullYear():返回Date对象的年份，其值为4位数。</p>
+<p>getTime():返回自某一时刻（2010年1月1日）以来的毫秒数。</p>
+<h2 id="DOM概述"><a href="#DOM概述" class="headerlink" title="DOM概述"></a>DOM概述</h2><p>什么是DOM</p>
+<p>DOM是文档对象的缩写，和语言无关。它提供了访问、动态修改结构文档的接口，W3C制定了DOM规范，主流浏览器都支持。</p>
+<p>使用Core DOM操作节点</p>
+<p>访问节点：</p>
+<p>使用getElement系列方法访问指定节点。</p>
+<p>getElementById():返回对拥有指定id的第一个对象的引用。</p>
+<p>getElementsByName():返回带有指定名称的对象的集合。</p>
+<p>getElementsByTagName():返回带有指定标签名的对象的集合。</p>
+<p>使用层次关系访问节点。</p>
+<p>parenNode:返回节点的父节点。</p>
+<p>firstChild:返回节点的首个节点。文本和属性节点没有父节点，会返回一个空数组，对于元素节点，若是没有子节点会返回null。</p>
+<p>lastChild:返回节点的最后一个子节点，返回值同firstChild。</p>
+<p>操作节点属性值</p>
+<p>CoreDOM的标准方法包括以下两种：</p>
+<p>getAttribute(“属性名”)：获取属性值。</p>
+<p>getAttribute(“属性名”,“属性值”)：设置属性值</p>
+<p>创建和增加节点：</p>
+<p>创建节点</p>
+<p>createElement(tagName):按照给定的标签名称创建一个新的元素节点</p>
+<p>appendChild(nodeName):向以存在节点列表的末尾添加新的节点。</p>
+<p>inserBefore(newNode,oldNode):向指定的节点之前插入一个新的子节点。</p>
+<p>cloneNode(deep):复制某个指定的节点。</p>
+<p>删除和替换节点</p>
+<p>removeChild(node):删除指定的节点。</p>
+<p>replaceChild(newNode,oldNode):用其他的节点替换指定的节点。</p>
+<p>Table对象的属性和方法</p>
+<p>属性：</p>
+<p>rows[]:返回包含表格中所有行的一个数组。</p>
+<p>rows[]用于返回表格中所有行的一个数组。</p>
+<p>方法：</p>
+<p>inserRow():在表格中插入一个新行。</p>
+<p>deleteRow():从表格中删除一行。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组是具有相同数据类型的一个或多个值得集合</p>
+<p>创建数组的语法：</p>
+<p>var 数组名称=new Array(size);</p>
+<p>数组的赋值的两种方式：</p>
+<p>先声明在赋值</p>
+<p>var province = new Array(4);</p>
+<p>province[0]=“河北省”;</p>
+<p>province[1]=“河南省”；</p>
+<p>索引也可以使用标识（字符串），例如：</p>
+<p>var province=new Array(4);</p>
+<p>province[‘河北省’]=“河北省”；</p>
+<p>province[‘河南省’]=“河南省”；</p>
+<p>声明时同时初始化</p>
+<p>var province=new Array(“河北省”,“河南省”，“湖北省”，“广东省”)；</p>
+<p>Array对象的常用属性和方法：</p>
+<p>属性：</p>
+<p>length:设置或返回数组中元素的数目。</p>
+<p>方法：</p>
+<p>join（）:把数组的所有元素放入一个字符串，通过一个分隔符进行分割。</p>
+<p>sort():对数组的元素进行排序。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/08/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%83%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/08/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%83%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（七）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-08 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-08T16:13:52+08:00">2021-02-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-25 11:58:59" itemprop="dateModified" datetime="2021-02-25T11:58:59+08:00">2021-02-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="关于锁机制的初步探讨（2）"><a href="#关于锁机制的初步探讨（2）" class="headerlink" title="关于锁机制的初步探讨（2）"></a>关于锁机制的初步探讨（2）</h3><h5 id="互斥锁的研发应用——线程同步配合"><a href="#互斥锁的研发应用——线程同步配合" class="headerlink" title="互斥锁的研发应用——线程同步配合"></a>互斥锁的研发应用——线程同步配合</h5><p>同步就是协同步调，按预定的先后次序进行运行。例如：小组对某一工程进行分工协同配合合作。</p>
+<p>对于计算机而言，线程、进程同步，可以理解为进程A或线程B一块配合，A执行到一定程度要依靠B的某个结果，于是停下来，示意B运行，B运行结果给A，A继续运行。这一点和我们上面说到的进程间通信很像<a target="_blank" rel="noopener" href="https://lyndegit.github.io/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/">https://lyndegit.github.io/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/</a></p>
+<p>线程同步的运用demo（3把互斥锁）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread,Lock</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="comment">#创建3把互斥锁</span></span><br><span class="line">lock1 =Lock()</span><br><span class="line">lock2 =Lock()</span><br><span class="line">lock3 =Lock()</span><br><span class="line"><span class="comment">#对lock2和lock3上锁</span></span><br><span class="line">lock2.acquire()</span><br><span class="line">lock3.acquire()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Task1</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> lock1.acquire():</span><br><span class="line">                print(<span class="string">&#x27;...task1...&#x27;</span>)</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line">                <span class="comment">#释放lock2的锁</span></span><br><span class="line">                lock2.release()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Task2</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> lock2.acquire():</span><br><span class="line">                print(<span class="string">&#x27;...task2...&#x27;</span>)</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line">                <span class="comment">#释放lock3的锁</span></span><br><span class="line">                lock3.release()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Task3</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> lock3.acquire():</span><br><span class="line">                print(<span class="string">&#x27;...task3...&#x27;</span>)</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line">                <span class="comment">#释放lock1的锁</span></span><br><span class="line">                lock1.release()</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t1 = Task1()</span><br><span class="line">    t2 = Task2()</span><br><span class="line">    t3 = Task3()</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br><span class="line">    t3.start()</span><br><span class="line"><span class="comment">#无限循环 task1-》task2-》task3</span></span><br></pre></td></tr></table></figure>
+<p>线程图例：</p>
+<p><img src="https://gitee.com/lynnde/photos/raw/master/photoGraphic/5.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(javascript)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -403,270 +856,8 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（五）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-06 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-06T16:13:52+08:00">2021-02-06</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-21 23:44:00" itemprop="dateModified" datetime="2021-02-21T23:44:00+08:00">2021-02-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>我们都知道进程是一个独立分配的一个单位，那么该如何实现不同进程之间的通信？</p>
-<p>实现方法：1.利用队列实现通信 2.利用进程池来进行通信</p>
-<p>利用队列的demo（实现方法：使用一个队列来依靠其FIFO特性进行读取）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,Queue</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#写入方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write</span>(<span class="params">q</span>):</span></span><br><span class="line">    a=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">        print(<span class="string">&#x27;开始写入的值：%s&#x27;</span>%i)</span><br><span class="line">        q.put(i)<span class="comment">#数据流入队列</span></span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reader</span>(<span class="params">q</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(q.qsize()):</span><br><span class="line">        print(<span class="string">&#x27;读取到的值：%s&#x27;</span>%q.get())</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Queue()</span><br><span class="line">    pw = Process(target=write(q))</span><br><span class="line">    pr = Process(target=reader(q))</span><br><span class="line">    pw.start()</span><br><span class="line">    pr.start()</span><br><span class="line">    pr.join()</span><br><span class="line">    pw.join()</span><br></pre></td></tr></table></figure>
-<p>利用进程池的demo（<a target="_blank" rel="noopener" href="https://lyndegit.github.io/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">进程池复习</a>）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Manager().Queue()</span><br><span class="line">    pool =Pool(<span class="number">3</span>)</span><br><span class="line">    pool.apply(write,(q,))</span><br><span class="line">    pool.apply(reader,(q,))</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br><span class="line"><span class="comment">#write，reader方法与上面一样，需要导入Manager包中的队列</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（三）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-05 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-05T16:13:52+08:00">2021-02-05</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-21 16:03:50" itemprop="dateModified" datetime="2021-02-21T16:03:50+08:00">2021-02-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h3><p>名词解释：所谓进程池，顾名思义就是存储进程的“池子”。</p>
-<p>在利用python进行系统管理的时候，特别是同时操作多个文件目录，或者远程控制多台主机开启多个进程，并行操作可节约大量的时间。当被操作对象数目不大时，可直接利用multiprocessing 中的 Process动态生成多个进程，但当进程数量成百上千时利用手动配置进程太过繁琐，可利用进程池。</p>
-<p>Pool可以提供制定数量的进程，供用户调用，当有新的请求提交到pool中时，如果池还没有满，就会创建一个新的进程来执行请求，池中达到最大值时请求会等待阻塞在序列中的进程，直到进程结束才会创建新的进程（池子的逻辑结构类似于一个进程队列）</p>
-<p>基本语法格式（构造方法）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pool(numprocess[,initializer[,initargs]])<span class="comment">#参数一为进程数二维进程可调用对象三为参数元祖</span></span><br></pre></td></tr></table></figure>
-<p>写一个调用进程池的小demo吧！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span>  time</span><br><span class="line"><span class="comment">#进程执行任务函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">msg</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;start:&#x27;</span>,msg)</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">&#x27;end&#x27;</span>,msg)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建进程池</span></span><br><span class="line">    pool = multiprocessing.Pool(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">#添加任务</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">        msg =<span class="string">&#x27;任务%d&#x27;</span>%i</span><br><span class="line">        pool.apply(func,(msg,)) <span class="comment">#调用函数及其参数</span></span><br><span class="line"></span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join() <span class="comment">#等待子进程结束</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="补充：使用继承方式创建进程"><a href="#补充：使用继承方式创建进程" class="headerlink" title="补充：使用继承方式创建进程"></a>补充：使用继承方式创建进程</h3><p>创建进程的方式还可以使用类的方式，通过自定义一个类（个性化定制），继承Procress类，每次实例化这个类时，就等同于实例化一个进程对象。代码示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入模块</span></span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClockProcess</span>(<span class="params">Process</span>):</span></span><br><span class="line">    <span class="comment">#重新初始化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,interval</span>):</span> <span class="comment">#interval 参数为睡眠时间</span></span><br><span class="line">        Process.__init__(self)</span><br><span class="line">        self.interval =interval</span><br><span class="line">    <span class="comment">#重写run（）方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span> <span class="comment">#可以个性化制定其run方法</span></span><br><span class="line">        print(<span class="string">&#x27;子进程开始执行的时间：&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(time.ctime()))</span><br><span class="line">        time.sleep(self.interval)</span><br><span class="line">        print(<span class="string">&#x27;子进程结束执行的时间：&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(time.ctime()))</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建子进程</span></span><br><span class="line">    p = ClockProcess(<span class="number">3</span>)</span><br><span class="line">    p.start()</span><br><span class="line">    print(<span class="string">&#x27;主进程执行结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%9B%9B%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%9B%9B%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（四）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-05 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-05T16:13:52+08:00">2021-02-05</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-21 23:21:25" itemprop="dateModified" datetime="2021-02-21T23:21:25+08:00">2021-02-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><p>进程:是程序运行的过程，是系统进行资源分配和调度的一个独立单位</p>
-<p>线程:是操作系统能够进行调度的最小单位。它被包含在进程之中，是进程中实际运作单位</p>
-<p>关系:一个线程可以创建和撤销另一个线程；同一个进程中多个线程之间可以并发执行，相对进程而言，线程是一个更加接近于执行体的概念，他可以同其他线程共享数据，但拥有自己的栈空间，具有独立的执行序列</p>
-<p>因此我们知道多个进程之间的数据是独立的（不共享），同一进程的线程共享数据（抢占cpu资源）</p>
-<p>进程demo(证明其不同进程间数据不共享)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line">num =<span class="number">10</span> <span class="comment">#全局资源</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work1</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    num +=<span class="number">5</span>;</span><br><span class="line">    print(<span class="string">&#x27;子进程1运行后，num的值&#x27;</span>,num) <span class="comment">#15</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work2</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    num +=<span class="number">20</span>;</span><br><span class="line">    print(<span class="string">&#x27;子进程2运行后，num的值&#x27;</span>, num)<span class="comment">#20</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    print(<span class="string">&#x27;主进程开始执行&#x27;</span>)</span><br><span class="line">    p1=Process(target=work1)</span><br><span class="line">    p2 = Process(target=work2)</span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p1.join()</span><br><span class="line">    p2.join()</span><br><span class="line">    print(<span class="string">&#x27;全局变量num&#x27;</span>,num) <span class="comment">#10</span></span><br></pre></td></tr></table></figure>
-<p>线程demo（证明线程抢占资源）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work1</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100000</span>):</span><br><span class="line">        num +=<span class="number">1</span></span><br><span class="line">    print(<span class="string">&#x27;执行test1函数num的值：&#x27;</span>,num)<span class="comment">#100000</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work2</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100000</span>):</span><br><span class="line">        num += <span class="number">1</span></span><br><span class="line">    print(<span class="string">&#x27;执行test2函数num的值：&#x27;</span>, num)<span class="comment">#175644</span></span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t1 = Thread(target=work1)</span><br><span class="line">    t2 = Thread(target=work2)</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br><span class="line">    t1.join()</span><br><span class="line">    t2.join()</span><br><span class="line">    <span class="comment">#test2中num并不为20000：因为两个函数交替抢占资源进行循环导致循环次数达到后num却不为20000</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
