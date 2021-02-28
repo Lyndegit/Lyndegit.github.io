@@ -25,20 +25,24 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="进程池名词解释：所谓进程池，顾名思义就是存储进程的“池子”。 在利用python进行系统管理的时候，特别是同时操作多个文件目录，或者远程控制多台主机开启多个进程，并行操作可节约大量的时间。当被操作对象数目不大时，可直接利用multiprocessing 中的 Process动态生成多个进程，但当进程数量成百上千时利用手动配置进程太过繁琐，可利用进程池。 Pool可以提供制定数量的进程，供用户调用，">
+<meta name="description" content="浅谈摄影 对于摄影：情不知所起，一往情深  第一次接触摄影，是当时大一时被学生会摄影部的同学拉去当模特，拍完之后，虽说看到帅气的照片后非常开心，但是心里依然非常好奇，似乎对于我来说，比起被当成模特，我更愿意手持机器，看着目镜通过按下快门那一瞬间的喀嚓声获得更大的快感。于是，说干就干，从基本的单反入手，到胶片定焦以及从摄影到摄像，我似乎越来越迷恋于拍摄的乐趣。是啊：关于人的记忆，往往是主观且会随着时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习之路（三）">
-<meta property="og:url" content="http://example.com/child/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
+<meta property="og:title" content="浅谈摄影">
+<meta property="og:url" content="http://example.com/child/2021/02/25/%E6%B5%85%E8%B0%88%E6%91%84%E5%BD%B1/index.html">
 <meta property="og:site_name" content="MBaNing">
-<meta property="og:description" content="进程池名词解释：所谓进程池，顾名思义就是存储进程的“池子”。 在利用python进行系统管理的时候，特别是同时操作多个文件目录，或者远程控制多台主机开启多个进程，并行操作可节约大量的时间。当被操作对象数目不大时，可直接利用multiprocessing 中的 Process动态生成多个进程，但当进程数量成百上千时利用手动配置进程太过繁琐，可利用进程池。 Pool可以提供制定数量的进程，供用户调用，">
+<meta property="og:description" content="浅谈摄影 对于摄影：情不知所起，一往情深  第一次接触摄影，是当时大一时被学生会摄影部的同学拉去当模特，拍完之后，虽说看到帅气的照片后非常开心，但是心里依然非常好奇，似乎对于我来说，比起被当成模特，我更愿意手持机器，看着目镜通过按下快门那一瞬间的喀嚓声获得更大的快感。于是，说干就干，从基本的单反入手，到胶片定焦以及从摄影到摄像，我似乎越来越迷恋于拍摄的乐趣。是啊：关于人的记忆，往往是主观且会随着时">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-05T08:13:52.000Z">
-<meta property="article:modified_time" content="2021-02-21T08:03:50.703Z">
+<meta property="og:image" content="https://gitee.com/lynnde/photo-gitee/raw/master/photos/2019-09-21_time.jpg">
+<meta property="og:image" content="https://gitee.com/lynnde/photos/raw/master/photoGraphic/mmexport1614168170696.jpg">
+<meta property="og:image" content="https://gitee.com/lynnde/photo-gitee/raw/master/photos/2019-09-21_people2.jpg">
+<meta property="article:published_time" content="2021-02-25T08:13:52.000Z">
+<meta property="article:modified_time" content="2021-02-28T03:32:46.610Z">
 <meta property="article:author" content="MBaNing">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/lynnde/photo-gitee/raw/master/photos/2019-09-21_time.jpg">
 
 
-<link rel="canonical" href="http://example.com/child/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">
+<link rel="canonical" href="http://example.com/child/2021/02/25/%E6%B5%85%E8%B0%88%E6%91%84%E5%BD%B1/">
 
 
 <script class="page-configurations">
@@ -50,7 +54,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>python学习之路（三） | MBaNing</title>
+<title>浅谈摄影 | MBaNing</title>
   
 
 
@@ -167,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%B1%A0"><span class="nav-number">1.</span> <span class="nav-text">进程池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BD%BF%E7%94%A8%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E5%88%9B%E5%BB%BA%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">补充：使用继承方式创建进程</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%85%E8%B0%88%E6%91%84%E5%BD%B1"><span class="nav-number">1.</span> <span class="nav-text">浅谈摄影</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,7 +247,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/25/%E6%B5%85%E8%B0%88%E6%91%84%E5%BD%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avartar.jpg">
@@ -256,7 +260,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          python学习之路（三）
+          浅谈摄影
         </h1>
 
         <div class="post-meta-container">
@@ -267,14 +271,14 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-02-05 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-05T16:13:52+08:00">2021-02-05</time>
+      <time title="创建时间：2021-02-25 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-25T16:13:52+08:00">2021-02-25</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-21 16:03:50" itemprop="dateModified" datetime="2021-02-21T16:03:50+08:00">2021-02-21</time>
+        <time title="修改时间：2021-02-28 11:32:46" itemprop="dateModified" datetime="2021-02-28T11:32:46+08:00">2021-02-28</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,7 +286,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+          <a href="/categories/%E5%85%B3%E4%BA%8E%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">关于摄影</span></a>
         </span>
     </span>
 
@@ -296,17 +300,17 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h3><p>名词解释：所谓进程池，顾名思义就是存储进程的“池子”。</p>
-<p>在利用python进行系统管理的时候，特别是同时操作多个文件目录，或者远程控制多台主机开启多个进程，并行操作可节约大量的时间。当被操作对象数目不大时，可直接利用multiprocessing 中的 Process动态生成多个进程，但当进程数量成百上千时利用手动配置进程太过繁琐，可利用进程池。</p>
-<p>Pool可以提供制定数量的进程，供用户调用，当有新的请求提交到pool中时，如果池还没有满，就会创建一个新的进程来执行请求，池中达到最大值时请求会等待阻塞在序列中的进程，直到进程结束才会创建新的进程（池子的逻辑结构类似于一个进程队列）</p>
-<p>基本语法格式（构造方法）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pool(numprocess[,initializer[,initargs]])<span class="comment">#参数一为进程数二维进程可调用对象三为参数元祖</span></span><br></pre></td></tr></table></figure>
-<p>写一个调用进程池的小demo吧！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span>  time</span><br><span class="line"><span class="comment">#进程执行任务函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">msg</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;start:&#x27;</span>,msg)</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">&#x27;end&#x27;</span>,msg)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建进程池</span></span><br><span class="line">    pool = multiprocessing.Pool(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">#添加任务</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">        msg =<span class="string">&#x27;任务%d&#x27;</span>%i</span><br><span class="line">        pool.apply(func,(msg,)) <span class="comment">#调用函数及其参数</span></span><br><span class="line"></span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join() <span class="comment">#等待子进程结束</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="补充：使用继承方式创建进程"><a href="#补充：使用继承方式创建进程" class="headerlink" title="补充：使用继承方式创建进程"></a>补充：使用继承方式创建进程</h3><p>创建进程的方式还可以使用类的方式，通过自定义一个类（个性化定制），继承Procress类，每次实例化这个类时，就等同于实例化一个进程对象。代码示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入模块</span></span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClockProcess</span>(<span class="params">Process</span>):</span></span><br><span class="line">    <span class="comment">#重新初始化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,interval</span>):</span> <span class="comment">#interval 参数为睡眠时间</span></span><br><span class="line">        Process.__init__(self)</span><br><span class="line">        self.interval =interval</span><br><span class="line">    <span class="comment">#重写run（）方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span> <span class="comment">#可以个性化制定其run方法</span></span><br><span class="line">        print(<span class="string">&#x27;子进程开始执行的时间：&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(time.ctime()))</span><br><span class="line">        time.sleep(self.interval)</span><br><span class="line">        print(<span class="string">&#x27;子进程结束执行的时间：&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(time.ctime()))</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建子进程</span></span><br><span class="line">    p = ClockProcess(<span class="number">3</span>)</span><br><span class="line">    p.start()</span><br><span class="line">    print(<span class="string">&#x27;主进程执行结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
+        <h3 id="浅谈摄影"><a href="#浅谈摄影" class="headerlink" title="浅谈摄影"></a>浅谈摄影</h3><blockquote>
+<p>对于摄影：情不知所起，一往情深</p>
+</blockquote>
+<p>第一次接触摄影，是当时大一时被学生会摄影部的同学拉去当模特，拍完之后，虽说看到帅气的照片后非常开心，但是心里依然非常好奇，似乎对于我来说，比起被当成模特，我更愿意手持机器，看着目镜通过按下快门那一瞬间的喀嚓声获得更大的快感。于是，说干就干，从基本的单反入手，到胶片定焦以及从摄影到摄像，我似乎越来越迷恋于拍摄的乐趣。是啊：关于人的记忆，往往是主观且会随着时间消逝的，唯有照片可以记录下这最美好的瞬间，让最好的时刻定格。</p>
+<p>既然是浅谈摄影，这里来简单说一下摄影摄像的基础及这几年入门的心得吧。所谓摄影个人认为无非是3大块：目标素材，构图，光线。</p>
+<p>俗话说的好：横看成岭侧成峰远近高低各不同，而摄影也是将3维物体对2维平面的投影，对一个目标物体来说摄影机的角度不同，其最后的呈像效果也会有所不同。并且我们知道，对于一个正常曝光的照片，他的主体（对焦点）前后都会有一个清晰的范围，超过这个范围后，景物会越来越模糊，这就是“景深”对于我们的目标素材，我们往往需要配合光圈和焦距物距等达到镜头与其的合理距离，使拍摄主体更为突出。并且有时我们使用慢门拍摄快速移动的物体（提高曝光时间）还会达到意想不到的效果<img src="https://gitee.com/lynnde/photo-gitee/raw/master/photos/2019-09-21_time.jpg">（这是我拍过的一个车尾灯图片，提高曝光时间后：夜晚车的光源留下，而车竟然”消失”了）</p>
+<p>对于构图来说：有n多种构图方式（对称构图，三分法，垂直水平线构图，曲线构图等等），其目的是摄影师通过某种形式的画面向别人传递所想要表达的特定信息与自己的主观意向，这就是构图的意义所在，一个好的摄影师会将所有元素和其布局组成考虑到一个有限的篇幅内，不同的点线面组成的物体，及光线和氛围的渲染成就一张良好的照片。<img src="https://gitee.com/lynnde/photos/raw/master/photoGraphic/mmexport1614168170696.jpg">（最近拍摄的一张人像，采用对称构图法，人物模特处于正中，通过不同的高光及阴影将画面一分为二，使被拍摄客体的五官更加立体）</p>
+<p>光线：对于摄影师来说，巧妙使用光线是进阶课程，万千世界的各个物体，无不是反射色光后进入人眼或相机的CMOS中出现了形形色色的画面，光线又分为侧光，顺光逆光高逆光，柔光等等等等，这里不展开赘述。光具有较重要的表达性，有些光是硬的、刺目的、聚集的、直接的；有些光是软的、柔和的、散射的、间接的。在摄影中，光能影响被摄体再现的<strong>形状、影调、色彩、空间感</strong>以及<strong>美感、真实感</strong>。光线的三个特性是：强度、方向、色温。光的强度与光源的能量距离以及传播、设备介质有关。直观的感觉就是光的明暗程度。方向即是光源的方向。色温则表现在光源的颜色上。这三个特性会有助于我们在拍摄的时候更好分析光线，具体会在后面进行进一步更新。</p>
+<p>这里简单展示一个作品</p>
+<p><img src="https://gitee.com/lynnde/photo-gitee/raw/master/photos/2019-09-21_people2.jpg"></p>
+<p>（这里主体曝光严重不足，而背景光源和光线强度充足，形成所谓的“剪影”效果）</p>
 
     </div>
 
@@ -320,14 +324,11 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="prev" title="python学习之路（四）">
-                  <i class="fa fa-chevron-left"></i> python学习之路（四）
+                <a href="/2021/02/18/%E5%85%B3%E4%BA%8E21%E5%B9%B4%E6%AC%A7%E5%86%A0%E7%9A%84%E7%9C%8B%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="关于21年欧冠的看法（一）">
+                  <i class="fa fa-chevron-left"></i> 关于21年欧冠的看法（一）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/" rel="next" title="python学习之路（五）">
-                  python学习之路（五） <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
