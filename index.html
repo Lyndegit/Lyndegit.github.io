@@ -131,7 +131,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a></li>
         <li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
   </ul>
 </nav>
@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -230,6 +230,97 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/02/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%89%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/02/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%89%EF%BC%89/" class="post-title-link" itemprop="url">算法整理（三）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-02 18:13:52" itemprop="dateCreated datePublished" datetime="2021-03-02T18:13:52+08:00">2021-03-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-03 23:21:46" itemprop="dateModified" datetime="2021-03-03T23:21:46+08:00">2021-03-03</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ol>
+<li><p>冒泡排序：外循环0–n-1；内循环0–n-2-i；与下一位互换位置</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>-i;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i]&gt;q[i+<span class="number">1</span>]) swap(q[i],q[i+<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>快速排序：分治，关键点l,r，遍历，交换，递归处理左右两侧(l,j)与(j+1,r) 。 nlogn</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> q[],<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">	 <span class="title">if</span> <span class="params">(l &lt; r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//Swap(s[l], s[(l + r) / 2]); //将中间的这个数和第一个数交换 参见注1</span></span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[l];</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &gt;= x) <span class="comment">// 从右向左找第一个小于x的数</span></span><br><span class="line">                j--;  </span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) </span><br><span class="line">                s[i++] = s[j];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &lt; x) <span class="comment">// 从左向右找第一个大于等于x的数</span></span><br><span class="line">                i++;  </span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) </span><br><span class="line">                s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">	<span class="comment">//递归处理i的两侧 </span></span><br><span class="line">	quick_sort(s,l,i<span class="number">-1</span>);</span><br><span class="line">	quick_sort(s,i+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>归并排序：分治，关键点mid,l,r。先递归，再将左右两边的数组合并为一个数组，在赋值回原数组。即：先划分（递归进行划分），再排序 nlogn</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> q[],<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = (l+r)/<span class="number">2</span>;</span><br><span class="line">    merge_sort(q,l,mid);</span><br><span class="line">    merge_sort(q,mid+<span class="number">1</span>,r);</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">0</span>,i=l,j=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid &amp;&amp; j&lt;=r) &#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i]&lt;q[j]) tmp[k++] = q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k++] = q[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid) tmp[k++] = q[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r) tmp[k++] = q[j++];</span><br><span class="line">    <span class="keyword">for</span>(i=l,j=<span class="number">0</span>;i&lt;=r;i++,j++) q[i] = tmp[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3></li>
+<li><p>二分查找\定界</p>
+<p>前提是待查找元素<strong>排列有序</strong>。时间复杂度由L降低为logL</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> base=<span class="number">0</span>,top=size;</span><br><span class="line"><span class="keyword">while</span>(base&lt;=top) &#123;</span><br><span class="line">    <span class="keyword">int</span> mid = (base+top)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;mid) top=mid<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(x&gt;mid) base=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -563,91 +654,6 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
           <blockquote><p>我们正在经历一场足球时代的交接，新王诞生！</p>
 <footer><strong>足球著名解说员</strong><cite>詹俊</cite></footer></blockquote>
 <p>相信不少小伙伴都熬夜看了这场16强第一回合的关键比赛：巴萨罗那vs巴黎圣日耳曼。作为一个大巴黎死忠兼姆吹球迷，我当然也不能错过，赛前的的各种新闻以及网上的一些舆论让所有人都认为巴黎是处于劣势————毕竟巴黎方面：内马尔和迪玛利亚，两位前场不可或缺的球员伤停;而巴萨方面：联赛状态逐渐回温，皮克火线复出。<br>谁能想到这场比赛竟发展成一边倒的局面。<br>正所谓：<br>长江后浪推前浪，把前浪打在沙滩上。<br>老夫聊发少年狂，金球奖往事好辉煌。<br>可是今天谁承想，法国天才横空出世。<br>自古英雄出少年，让他小儿门口称王！<br>真：巴黎剩姆院，踩着梅球王完成了帽子戏法。<br>然而？我们来复盘这场比赛，究竟是姆皇太过耀眼，还是巴萨漏洞太多？鄙人来简单发表一下看法。<br>俗话说的好，足球是一项团队运动，我深信不疑，诚然：一个优秀的球员可以在最后10几码的区域完成很多工作，然而没有一个团队的支撑，一个人也是秀不起来的。<br>我们来看姆巴佩第一个进球：巴黎从后场发展到前场，看似球飞过了整个区域，其实总共才三次传球就把巴萨防线交的天翻地覆，由于帕雷德斯的长传转移和维拉蒂的穿插引线使得姆巴佩最终在小禁区舒服的拿到了球，最后这一拨一射，的确是巨星气质显现，其实也就比朗格莱快了半步，然而就是这半步，造成了进球。<br>同时姆巴佩的第三个进球可谓是快速反击的教科书式进球，巴萨阵地战进攻前压太深，而又不对姆巴佩设专人贴身防守，中场断球后，巴黎迅速形成3打2的局面，最终又是姆巴佩的速度以及射术，让比赛失去了悬念。此情此景又让人回想到18年世界杯，姆巴佩——那个风一样的少年，横空出世。用今天同样的方式，让世人记住了他的名字。<br>本人看球玩球也算有了几年，自己浅见:所谓现代足球，讲求快准狠，快速通过中场形成致命打击，这也是我为什么如此看好姆巴佩。诚然，比起意志力和盘带，姆巴佩比起同时期的C罗以及梅西差了不少，但是如今的战术体系中，像姆巴佩的球员可以说是教练最喜欢的，利物浦的渣叔讲究高位逼抢玩起来了“重金属”足球；包括穆里尼奥，也是大巴反击的重视拥护者。这也同样反应了如今的某些社会现象：讲求高效率，团队协作。因此就正如本文开头引用的“我们正经历一场足球时代的交接”，tikitaka对应防守反击，姆巴佩对应梅西，总有人正“年轻”。<br>以上扯淡居多^_^，总之还是希望今年大巴黎能走更远</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/14/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AFvue.js%E7%9A%84mvvm%E7%9A%84%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/14/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AFvue.js%E7%9A%84mvvm%E7%9A%84%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">vue的mvvm框架</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-14 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-14T16:13:52+08:00">2021-02-14</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-28 10:51:04" itemprop="dateModified" datetime="2021-02-28T10:51:04+08:00">2021-02-28</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">前端知识</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="浅谈前端vue-js的mvvm的框架"><a href="#浅谈前端vue-js的mvvm的框架" class="headerlink" title="浅谈前端vue.js的mvvm的框架"></a>浅谈前端vue.js的mvvm的框架</h3><p>初次听到这个mvvm框架，我们似乎很难不联想到另一个java非常火爆的框架——MVC，其实，MVVM就是MVC的适配于vue的改进版本</p>
-<p>其中： M：model；V:view; VM:ViewModel。为我们前端提供了一种将视图UI和数据业务逻辑分开的开发方法。MvvM的核心是ViewModel层，他就像是一个中转站，提供view（视图Ui）与Model（数据层）的双向数据绑定，该层向上与视图层进行双向数据绑定，向下与 Model 层通过接口请求进行数据交互，起呈上启下作用（数据驱动）。</p>
-<p>图示如下：<img src="https://gitee.com/lynnde/photos/raw/master/photoGraphic/882926-20171115175942921-775941263.png"></p>
-<p>Model层：是指数据模型，泛指后端进行的各种业务逻辑和数据操作，还包括向前段暴露的部分接口，主要围绕数据库系统展开。</p>
-<p>ViewModel层：ViewModel 是由前端开发人员组织生成和维护的视图数据层。在这一层，前端开发者对从后端获取的 Model 数据进行转换处理，做二次封装，以生成符合 View 层使用预期的视图数据模型。由于实现了双向绑定，ViewModel 的内容会实时展现在 View 层，这是激动人心的，因为前端开发者再也不必低效又麻烦地通过操纵 DOM 去更新视图，MVVM  框架已经把最脏最累的一块做好了，我们开发者只需要处理和维护  ViewModel，更新数据视图就会自动得到相应更新，真正实现数据驱动开发。看到了吧，View 层展现的不是 Model 层的数据，而是  ViewModel 的数据，由 ViewModel 负责与 Model 层交互，这就完全解耦了 View 层和 Model  层，这个解耦是至关重要的，它是前后端分离方案实施的重要一环。</p>
-<p>View层：前段大部分代码机器ui设计在此进行，这里需要向用户提供优美的前端页面和方便的人机交互接口。（这里推荐几个框架：包括Element，Ant Design of Vue等等等。）</p>
 
       
     </div>
