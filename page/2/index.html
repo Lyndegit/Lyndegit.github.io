@@ -130,8 +130,8 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a></li>
         <li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
   </ul>
 </nav>
@@ -180,14 +180,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -230,6 +230,195 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/11/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84next%20theme%20%E7%9A%84%E7%9B%B8%E5%86%8C%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/11/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84next%20theme%20%E7%9A%84%E7%9B%B8%E5%86%8C%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">基于hexo的next theme 的相册搭建</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-11 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-11T16:13:52+08:00">2021-02-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-27 23:21:49" itemprop="dateModified" datetime="2021-02-27T23:21:49+08:00">2021-02-27</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%BB%BA%E7%AB%99%E5%8E%86%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">建站历程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="基于hexo的next-theme-的相册搭建"><a href="#基于hexo的next-theme-的相册搭建" class="headerlink" title="基于hexo的next theme 的相册搭建"></a>基于hexo的next theme 的相册搭建</h3><p>前言：每个人的博客都希望有一个相册的版块，用来存放自己拍摄的照片，作为一个深度摄影爱好者，尤其是作为一个摄影爱好者，这个版块是必不可少的，那么？该如何架构属于自己的相册呢？总的来说分为这么几个步骤:1.搭建远程服务器来存放照片（当然你可以花money来购买），利用gitee public仓库来存放自己的照片（推荐）。2.对照片来进行简单处理（剪裁，压缩，提交服务器）3.配置自己的next page</p>
+<p>1.利用gitee来当远程仓库存放自己的照片，名字任意，但是记住一定要是公开的仓库，否则博客中无法正常显示。并在改仓库中新建两个文件夹<code>photo</code>和<code>mini_photo</code>。photo文件夹中存放的是照片原图，而mini_photo中存放的是经过脚本处理的照片缩略图，照片的命名方式请按照yyyy-MM-dd_图片描述.png/jpg格式。</p>
+<p>在本地博客的上级目录中存放本地相册，在<code>博客/source</code>文件夹中新建<code>photos</code>目录</p>
+<p>这里我们采用<code>python</code>脚本对照片进行处理，将脚本放在本地相册文件夹中</p>
+<p>这里的脚本我放在了<a target="_blank" rel="noopener" href="https://github.com/Lyndegit/photoware%E4%B8%8A%EF%BC%8C%E6%96%87%E4%BB%B6%EF%BC%9AimageDeal.py,%E6%B3%A8%E6%84%8F%E5%B0%86%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E6%94%B9%E6%88%90%E8%87%AA%E5%B7%B1%E5%8D%9A%E5%AE%A2%E7%9A%84pothos%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84%E8%B7%AF%E5%BE%84">https://github.com/Lyndegit/photoware上，文件：imageDeal.py,注意将打开文件的路径改成自己博客的pothos文件夹下的路径</a></p>
+<p>坑：有时会报错，因为是缺少python 的Pillow包</p>
+<p>注：这里不推荐使用github来存放自己的照片，经过掉坑分析原因如下，大概因为其域名是国外的，然后自己的主机找不到合适的ip地址。经过实验的解决方法如下：</p>
+<p>修改hosts</p>
+<p>打开文件： C:\Windows\System32\drivers\etc\hosts</p>
+<p>在文件末尾添加：</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># GitHub Start </span><br><span class="line"><span class="number">140.82.113.3</span>      github.com</span><br><span class="line"><span class="number">140.82.114.20</span>     gist.github.com</span><br><span class="line"> </span><br><span class="line"><span class="number">151.101.184.133</span>    assets-cdn.github.com</span><br><span class="line"><span class="number">151.101.184.133</span>    raw.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    gist.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    cloud.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    camo.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars0.githubusercontent.com</span><br><span class="line"><span class="number">199.232.68.133</span>     avatars0.githubusercontent.com</span><br><span class="line"><span class="number">199.232.28.133</span>     avatars1.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars1.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars2.githubusercontent.com</span><br><span class="line"><span class="number">199.232.28.133</span>     avatars2.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars3.githubusercontent.com</span><br><span class="line"><span class="number">199.232.68.133</span>     avatars3.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars4.githubusercontent.com</span><br><span class="line"><span class="number">199.232.68.133</span>     avatars4.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars5.githubusercontent.com</span><br><span class="line"><span class="number">199.232.68.133</span>     avatars5.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars6.githubusercontent.com</span><br><span class="line"><span class="number">199.232.68.133</span>     avatars6.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars7.githubusercontent.com</span><br><span class="line"><span class="number">199.232.68.133</span>     avatars7.githubusercontent.com</span><br><span class="line"><span class="number">151.101.184.133</span>    avatars8.githubusercontent.com</span><br><span class="line"><span class="number">199.232.68.133</span>     avatars8.githubusercontent.com</span><br><span class="line"> </span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
+<p>2.在 next 主题目录<code>next/layout</code>下面增加 photo.swig 页面（此文件也在我的github上）</p>
+<p>利用hexo new page photos 来生成相册页面</p>
+<p>其index.md修改如下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./ins.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./photoswipe.css&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./default-skin/default-skin.css&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;photos-btn-wrap&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;a class=&quot;photos-btn active&quot; href=&quot;javascript:void(0)&quot;&gt;记录点滴&lt;/a&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">b</span> <span class="attr">class</span>=<span class="string">&quot;photos-btn active&quot;</span>&gt;</span>Photos<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;instagram itemscope&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">herf</span>=<span class="string">&quot;https://lyndegit.github.io/photos/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">class</span>=<span class="string">&quot;open-ins&quot;</span>&gt;</span>图片正在加载中…<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> loadScript = <span class="function"><span class="keyword">function</span>(<span class="params">path</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $script = <span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>)</span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;body&#x27;</span>)[<span class="number">0</span>].appendChild($script)</span></span><br><span class="line"><span class="javascript">      $script.setAttribute(<span class="string">&#x27;src&#x27;</span>, path)</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        loadScript(<span class="string">&#x27;./ins.js&#x27;</span>)</span></span><br><span class="line">    &#125;, 0)</span><br><span class="line">  &#125;)()</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>另外注意修改器ins.js文件，讲minsrc（缩略图路径）和src（照片路径）分别对应于gitee上的图片路径</p>
+<p>坑：注意其路径不是页面对应的url而是图片对应的原始数据路径</p>
+<p>例<a target="_blank" rel="noopener" href="https://gitee.com/lynnde/photo-gitee/raw/master/photos/">https://gitee.com/lynnde/photo-gitee/raw/master/photos/</a></p>
+<p>之后修改config文件，可自行添加icon和暴露对应的页面接口</p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32115939/article/details/106377472">https://blog.csdn.net/qq_32115939/article/details/106377472</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dplovel/article/details/107356603">https://blog.csdn.net/dplovel/article/details/107356603</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/10/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AB%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/10/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AB%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（八）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-10 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-10T16:13:52+08:00">2021-02-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-25 16:54:23" itemprop="dateModified" datetime="2021-02-25T16:54:23+08:00">2021-02-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="开发模式：生产者消费者模式"><a href="#开发模式：生产者消费者模式" class="headerlink" title="开发模式：生产者消费者模式"></a>开发模式：生产者消费者模式</h3><p>生产者就是生产数据的线程，消费者就是消费数据的线程，在多线程开发当中，如果生产者处理速度很快，而消费者处理速度很慢，那么生产者就必须等待消费者处理完，才能继续生产数据，同样的道理，如果消费者的处理能力大于生产者，那么消费者就必须等待生产者。为了解决这个问题于是引入生产者和消费者模式</p>
+<p>生产者消费者模式通过一个容器来解决生产者和消费者的强耦合问题，生产者和消费者之间不能直接通信，我们可以通过设置一个队列来进行生产者与消费者之间的通信问题，也就是说，生产者和消费者共享一个队列，生产者生产商品后，会将商品添加到队列中，同理消费者会从队列中取出商品。</p>
+<p>代码demo：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Producter</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">global</span> queue</span><br><span class="line">        count =<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment">#判断队列大小</span></span><br><span class="line">            <span class="keyword">if</span> queue.qsize()&lt;<span class="number">100</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    msg =<span class="string">&#x27;生产第&#x27;</span>+<span class="built_in">str</span>(count)+<span class="string">&#x27;个商品&#x27;</span></span><br><span class="line">                    queue.put(msg)</span><br><span class="line">                    print(msg)</span><br><span class="line">                time.sleep(<span class="number">0.5</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Constumer</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">global</span> queue</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment">#判断队列大小</span></span><br><span class="line">            <span class="keyword">if</span> queue.qsize()&gt;<span class="number">50</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">                    msg =self.name+<span class="string">&#x27;消费&#x27;</span>+queue.get()</span><br><span class="line">                    print(msg)</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    queue =Queue();</span><br><span class="line">    p = Producter()</span><br><span class="line">    c = Constumer()</span><br><span class="line">    p.start()</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    c.start()</span><br></pre></td></tr></table></figure>
+<h3 id="补充：ThreadLocal"><a href="#补充：ThreadLocal" class="headerlink" title="补充：ThreadLocal"></a>补充：ThreadLocal</h3><p>我们知道多线程环境下，每一个线程均可以使用所属进程的全局变量。如果一个线程对全局变量进行了修改，将会影响到其他所有的线程对全局变量的计算操作，从而出现数据混乱，即为脏数据。为了避免多个线程同时对变量进行修改，引入了线程同步机制，通过互斥锁来控制对全局变量的访问（可以参考之前的几篇文章）。所以有时候线程使用局部变量要比全局变量好，因为局部变量只有线程自身可以访问，同一个进程下的其他线程不可访问。Python提供了ThreadLocal变量，它本身是一个全局变量，但是每个线程却可以利用它来保存属于自己的私有数据，这些私有数据对其他线程也是<u>不可见</u>的。</p>
+<p>使用demo：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="comment">#创建ThreadLocal对象</span></span><br><span class="line">local = threading.local()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_student</span>():</span></span><br><span class="line">    student_name = local.name</span><br><span class="line">    print(<span class="string">&#x27;线程名：%s 学生姓名：%s&#x27;</span>%(threading.current_thread().getName(),student_name))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_thread</span>(<span class="params">name</span>):</span></span><br><span class="line">    <span class="comment">#将传入的name值绑定到local的name上</span></span><br><span class="line">    local.name = name</span><br><span class="line">    process_student()</span><br><span class="line"></span><br><span class="line">t1 = threading.Thread(target=process_thread,args=(<span class="string">&#x27;张三&#x27;</span>,),name=<span class="string">&#x27;Thread-A&#x27;</span>)</span><br><span class="line">t2 = threading.Thread(target=process_thread,args=(<span class="string">&#x27;李四&#x27;</span>,),name=<span class="string">&#x27;Thread-B&#x27;</span>)</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -689,182 +878,8 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/07/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AD%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/07/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AD%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（六）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-07 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-07T16:13:52+08:00">2021-02-07</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-25 12:03:03" itemprop="dateModified" datetime="2021-02-25T12:03:03+08:00">2021-02-25</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="关于锁机制的一些初步探讨-1"><a href="#关于锁机制的一些初步探讨-1" class="headerlink" title="关于锁机制的一些初步探讨(1)"></a>关于锁机制的一些初步探讨(1)</h3><p>我们知道线程之间是争夺cpu而进行共享数据的，在类似于12306抢票的项目中如果抢占资源，那么可能会造成很多错误（试想下假设你和另一个同学俩人抢到了一张票那你俩谁能上车？），所以我们引进锁机制。</p>
-<h5 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h5><p>如果多个线程共同对某个数据修改，则可能出现不可预料的结果，为了保证数据的正确性，需要对多个线程进行同步，最简单的同步机制就是引入互斥锁。</p>
-<p>锁有两种状态——锁定和未锁定。某个线程要更改共享数据时，先将其锁定，此时资源的状态为“锁定”，其他线程不能更改，直到该线程释放资源，将资源的状态变成“非锁定”状态(即阻塞其他线程)其他的线程才能再次锁定该资源。互斥锁保证了每次只有一个线程进行写入操作，从而保证了多线程情况下数据的正确性。</p>
-<p>在python中使用Thread对象的lock可以实现线程同步。上锁方法（acquire）释放方法（release），对于那些需要每次只允许一个线程操作的数据，可以将其操作放到acquire和release方法之间。</p>
-<p>互斥锁demo：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread,Lock</span><br><span class="line">num =<span class="number">0</span></span><br><span class="line"><span class="comment">#创建一个互斥锁</span></span><br><span class="line">lock = Lock()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work1</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    lock.acquire() <span class="comment">#上锁</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        num +=<span class="number">1</span></span><br><span class="line">    lock.release()<span class="comment">#循环一次解锁</span></span><br><span class="line">    print(<span class="string">&#x27;执行test1函数的num值：&#x27;</span>,num)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work2</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    lock.acquire()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        num +=<span class="number">1</span></span><br><span class="line">    lock.release()</span><br><span class="line">    print(<span class="string">&#x27;执行test2函数的num值：&#x27;</span>,num)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t1 = Thread(target= work1)</span><br><span class="line">    t2 = Thread(target= work2)</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br><span class="line">    t1.join()</span><br><span class="line">    t2.join()</span><br></pre></td></tr></table></figure>
-
-
-<p>注：有时pycharm2017+版本编译器会报错空套测试。解决方法：将函数名更改（不能使用test保留关键字）</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（五）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-06 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-06T16:13:52+08:00">2021-02-06</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-25 16:56:09" itemprop="dateModified" datetime="2021-02-25T16:56:09+08:00">2021-02-25</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>我们都知道进程是一个独立分配的一个单位，那么该如何实现不同进程之间的通信？</p>
-<p>实现方法：1.利用队列实现通信 2.利用进程池来进行通信</p>
-<p>利用队列的demo（实现方法：使用一个队列来依靠其FIFO特性进行读取）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,Queue</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#写入方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write</span>(<span class="params">q</span>):</span></span><br><span class="line">    a=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">        print(<span class="string">&#x27;开始写入的值：%s&#x27;</span>%i)</span><br><span class="line">        q.put(i)<span class="comment">#数据流入队列</span></span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reader</span>(<span class="params">q</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(q.qsize()):</span><br><span class="line">        print(<span class="string">&#x27;读取到的值：%s&#x27;</span>%q.get())</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Queue()</span><br><span class="line">    pw = Process(target=write(q))</span><br><span class="line">    pr = Process(target=reader(q))</span><br><span class="line">    pw.start()</span><br><span class="line">    pr.start()</span><br><span class="line">    pr.join()</span><br><span class="line">    pw.join()</span><br></pre></td></tr></table></figure>
-<p>利用进程池的demo（<a target="_blank" rel="noopener" href="https://lyndegit.github.io/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">进程池复习</a>）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Manager().Queue()</span><br><span class="line">    pool =Pool(<span class="number">3</span>)</span><br><span class="line">    pool.apply(write,(q,))</span><br><span class="line">    pool.apply(reader,(q,))</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br><span class="line"><span class="comment">#write，reader方法与上面一样，需要导入Manager包中的队列</span></span><br></pre></td></tr></table></figure>
-<h3 id="补充：lamda表达式"><a href="#补充：lamda表达式" class="headerlink" title="补充：lamda表达式"></a>补充：lamda表达式</h3><p>lambda表达式可以用来声明匿名函数，lambda函数是一种简单的，在同一行中定义函数的方法，lambda函数实际生成了一个函数对象<br>    lambda表达式只允许包含一个表达式，不能包含复杂语句，表达式结果就是函数的返回值<br>    语法demo：<br>        lambda arg1,arg2,arg3….:&lt;表达式&gt;<br>    arg1、arg2、arg3为函数的参数，表达式相当于函数体<br>    例： f = lambda a,b,c: a+b+c<br>    print (f(2,3,4))<br>    返回：9</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
