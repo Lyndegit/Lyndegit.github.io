@@ -25,22 +25,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="浅谈前端vue.js的mvvm的框架初次听到这个mvvm框架，我们似乎很难不联想到另一个java非常火爆的框架——MVC，其实，MVVM就是MVC的适配于vue的改进版本 其中： M：model；V:view; VM:ViewModel。为我们前端提供了一种将视图UI和数据业务逻辑分开的开发方法。MvvM的核心是ViewModel层，他就像是一个中转站，提供view（视图Ui）与Model（数据层">
+<meta name="description" content="计算机图形学基础（图形的表示及数据结构）名词解释：规则对象：是指能用欧式集合进行描述的物体，如点，直线，曲线，平面，曲面或实体。 不规则对象：指不能用欧式几何进行描述的物体。 图形信息：指构成对象的点，线，面的位置和几何尺寸，以及他们相互间的关系等都是图形信息。 非图形信息：表示对象图形的线型，颜色，亮度以及供模拟和分析用的质量，比重，体积等数据，是有关对象的非图形信息。 几何信息：一般指形体在欧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue的mvvm框架">
-<meta property="og:url" content="http://example.com/child/2021/02/14/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AFvue.js%E7%9A%84mvvm%E7%9A%84%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="计算机图形学（一）">
+<meta property="og:url" content="http://example.com/child/2021/03/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="MBaNing">
-<meta property="og:description" content="浅谈前端vue.js的mvvm的框架初次听到这个mvvm框架，我们似乎很难不联想到另一个java非常火爆的框架——MVC，其实，MVVM就是MVC的适配于vue的改进版本 其中： M：model；V:view; VM:ViewModel。为我们前端提供了一种将视图UI和数据业务逻辑分开的开发方法。MvvM的核心是ViewModel层，他就像是一个中转站，提供view（视图Ui）与Model（数据层">
+<meta property="og:description" content="计算机图形学基础（图形的表示及数据结构）名词解释：规则对象：是指能用欧式集合进行描述的物体，如点，直线，曲线，平面，曲面或实体。 不规则对象：指不能用欧式几何进行描述的物体。 图形信息：指构成对象的点，线，面的位置和几何尺寸，以及他们相互间的关系等都是图形信息。 非图形信息：表示对象图形的线型，颜色，亮度以及供模拟和分析用的质量，比重，体积等数据，是有关对象的非图形信息。 几何信息：一般指形体在欧">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/lynnde/photos/raw/master/photoGraphic/882926-20171115175942921-775941263.png">
-<meta property="article:published_time" content="2021-02-14T08:13:52.000Z">
-<meta property="article:modified_time" content="2021-02-28T02:51:04.505Z">
+<meta property="article:published_time" content="2021-03-04T06:40:32.000Z">
+<meta property="article:modified_time" content="2021-03-04T06:41:29.976Z">
 <meta property="article:author" content="MBaNing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/lynnde/photos/raw/master/photoGraphic/882926-20171115175942921-775941263.png">
 
 
-<link rel="canonical" href="http://example.com/child/2021/02/14/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AFvue.js%E7%9A%84mvvm%E7%9A%84%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/">
+<link rel="canonical" href="http://example.com/child/2021/03/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/">
 
 
 <script class="page-configurations">
@@ -52,7 +50,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>vue的mvvm框架 | MBaNing</title>
+<title>计算机图形学（一） | MBaNing</title>
   
 
 
@@ -169,7 +167,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AFvue-js%E7%9A%84mvvm%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">浅谈前端vue.js的mvvm的框架</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%BE%E5%BD%A2%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%8F%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">计算机图形学基础（图形的表示及数据结构）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="nav-number">1.0.1.</span> <span class="nav-text">名词解释：</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -245,7 +243,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/14/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AFvue.js%E7%9A%84mvvm%E7%9A%84%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avartar.jpg">
@@ -258,7 +256,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vue的mvvm框架
+          计算机图形学（一）
         </h1>
 
         <div class="post-meta-container">
@@ -268,23 +266,17 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-02-14 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-14T16:13:52+08:00">2021-02-14</time>
+      <time title="创建时间：2021-03-04 14:40:32 / 修改时间：14:41:29" itemprop="dateCreated datePublished" datetime="2021-03-04T14:40:32+08:00">2021-03-04</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-28 10:51:04" itemprop="dateModified" datetime="2021-02-28T10:51:04+08:00">2021-02-28</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">前端知识</span></a>
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机图形学</span></a>
         </span>
     </span>
 
@@ -298,12 +290,28 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="浅谈前端vue-js的mvvm的框架"><a href="#浅谈前端vue-js的mvvm的框架" class="headerlink" title="浅谈前端vue.js的mvvm的框架"></a>浅谈前端vue.js的mvvm的框架</h3><p>初次听到这个mvvm框架，我们似乎很难不联想到另一个java非常火爆的框架——MVC，其实，MVVM就是MVC的适配于vue的改进版本</p>
-<p>其中： M：model；V:view; VM:ViewModel。为我们前端提供了一种将视图UI和数据业务逻辑分开的开发方法。MvvM的核心是ViewModel层，他就像是一个中转站，提供view（视图Ui）与Model（数据层）的双向数据绑定，该层向上与视图层进行双向数据绑定，向下与 Model 层通过接口请求进行数据交互，起呈上启下作用（数据驱动）。</p>
-<p>图示如下：<img src="https://gitee.com/lynnde/photos/raw/master/photoGraphic/882926-20171115175942921-775941263.png"></p>
-<p>Model层：是指数据模型，泛指后端进行的各种业务逻辑和数据操作，还包括向前段暴露的部分接口，主要围绕数据库系统展开。</p>
-<p>ViewModel层：ViewModel 是由前端开发人员组织生成和维护的视图数据层。在这一层，前端开发者对从后端获取的 Model 数据进行转换处理，做二次封装，以生成符合 View 层使用预期的视图数据模型。由于实现了双向绑定，ViewModel 的内容会实时展现在 View 层，这是激动人心的，因为前端开发者再也不必低效又麻烦地通过操纵 DOM 去更新视图，MVVM  框架已经把最脏最累的一块做好了，我们开发者只需要处理和维护  ViewModel，更新数据视图就会自动得到相应更新，真正实现数据驱动开发。看到了吧，View 层展现的不是 Model 层的数据，而是  ViewModel 的数据，由 ViewModel 负责与 Model 层交互，这就完全解耦了 View 层和 Model  层，这个解耦是至关重要的，它是前后端分离方案实施的重要一环。</p>
-<p>View层：前段大部分代码机器ui设计在此进行，这里需要向用户提供优美的前端页面和方便的人机交互接口。（这里推荐几个框架：包括Element，Ant Design of Vue等等等。）</p>
+        <h3 id="计算机图形学基础（图形的表示及数据结构）"><a href="#计算机图形学基础（图形的表示及数据结构）" class="headerlink" title="计算机图形学基础（图形的表示及数据结构）"></a>计算机图形学基础（图形的表示及数据结构）</h3><h5 id="名词解释："><a href="#名词解释：" class="headerlink" title="名词解释："></a>名词解释：</h5><p>规则对象：是指能用欧式集合进行描述的物体，如点，直线，曲线，平面，曲面或实体。</p>
+<p>不规则对象：指不能用欧式几何进行描述的物体。</p>
+<p>图形信息：指构成对象的点，线，面的位置和几何尺寸，以及他们相互间的关系等都是图形信息。</p>
+<p>非图形信息：表示对象图形的线型，颜色，亮度以及供模拟和分析用的质量，比重，体积等数据，是有关对象的非图形信息。</p>
+<p>几何信息：一般指形体在欧式空间的位置与大小。</p>
+<p>拓扑信息：是形体各分量（点，线，面）的数目及相互间的<strong>连接关系</strong>。</p>
+<p>刚体运动：是指不改变图形上任意两点间的距离，也不改变图形的集合性质。</p>
+<p>拓扑运动：允许形体做弹性运动，对图形可以随意的伸张扭曲，但图形上的点不能合并成一个点。</p>
+<p>拓扑等价：几个图形，若其中一个可以通过拓扑变化从其余图形中得到，就称他们拓扑等价。</p>
+<p>正则集：令A为一个点集，r为正则运算，i为取内点运算，c为取闭包运算。r.A = c.i.A    r.A称为A的正则集。</p>
+<p>二维流形：对于实体表面上的任意一点，都可以找到一个围绕着它的任意小的邻域，该邻域与平面上的一个圆盘是拓扑等价的。</p>
+<p>非二维流形：<strong>实体表面上的一条边所连接的面多于两个</strong>。</p>
+<p>多边形网格：三维形体的边界用曲边描述时，一个很好的近似处理方法就是将物体表面看做由多边形网格拼接而成。</p>
+<p>构造实体几何法：它由多个实体间进行集合操作来组合并形成相应新的实体。</p>
+<p>体素：体素是体积元素的简称，也是数字数据于三维空间分割上的最小单位，类比于像素，扩展为三维</p>
+<p>空间位置枚举表示：将实体空间分割为大小相同，形状规则的体素（包含所表示的实体信息）然后用体素的集合来表示实体对象。</p>
+<p>八叉树：八叉树是一种用于描述三维空间的树状数据结构，八叉树的每个节点表示一个正方体的体积元素，每个节点有八个子节点，将八个子节点所表示的体积元素加在一起就等于父节点的体积。</p>
+<p>BSP树：类似于八叉树的分割方法，它将一个实体用任一位置和任意方向的平面分为两部分。试想我们生活的空间，肯定是由为数众多的天花板、墙壁和地板组成，对于每一个“板”，都将空间分为“板前”和“板后”两个部分。已知人的位置，就可根据人在“板前”还是在“板后”，知道人所能看到的物体的遮挡顺序（如果人在板前，则板前的物体遮挡所有板后的物体）。BSP者，原理很简单：它试图将所有的板（在BSP中叫做平面）组织成一棵树，每个平面均将它所在的空间分割为前后两个部分，这两个部分又分别被另外的平面分割成更小的空间……直到最后，按照前面所说的算法，确定每一个房间（在BSP中叫做叶子）相对于眼睛的遮挡顺序。这是一个非常标准的二分法，仅按照“前”和“后”两个逻辑上的概念来切分空间，这使得它在以“房间”为单位组成的室内场景里是不二之选。</p>
+<p>无限自相似性：物体的整体和局部之间细节的无限重现。（类似于花椰菜。）</p>
+<p>图素：可用一定的几何参数和属性参数描述的最基本的图形输出元素。如点、线、圆等。若将复杂对象看作由某些相对简单的对象按某种规则构造出来的，后者又是由更简单的图形对象构造出来的，则分解到最后就是各种图素。因此，可认为所有对象和场景都是各种图素的组合。</p>
+<p>段：具有逻辑意义的有限个图素（或体素）及其附加属性的集合称为段， 段可以嵌套，用一些简单的段和图素组成更复杂的段，可依据其组合画出层次树结构（说白了就类似于小时候的拼插玩具，用一点点小积木拼出大项目。）</p>
+<p>层：类似于ps的图层，将绘制不同图形的图层层叠合并到同一层上。</p>
 
     </div>
 
@@ -317,13 +325,13 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/02/11/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84next%20theme%20%E7%9A%84%E7%9B%B8%E5%86%8C%E6%90%AD%E5%BB%BA/" rel="prev" title="基于hexo的next theme 的相册搭建">
-                  <i class="fa fa-chevron-left"></i> 基于hexo的next theme 的相册搭建
+                <a href="/2021/03/02/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%89%EF%BC%89/" rel="prev" title="算法整理（三）">
+                  <i class="fa fa-chevron-left"></i> 算法整理（三）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/02/18/%E5%85%B3%E4%BA%8E21%E5%B9%B4%E6%AC%A7%E5%86%A0%E7%9A%84%E7%9C%8B%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="关于21年欧冠的看法（一）">
-                  关于21年欧冠的看法（一） <i class="fa fa-chevron-right"></i>
+                <a href="/2021/03/04/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="next" title="算法整理（四）">
+                  算法整理（四） <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
