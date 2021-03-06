@@ -25,20 +25,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="进程间通信我们都知道进程是一个独立分配的一个单位，那么该如何实现不同进程之间的通信？ 实现方法：1.利用队列实现通信 2.利用进程池来进行通信 利用队列的demo（实现方法：使用一个队列来依靠其FIFO特性进行读取）： 12345678910111213141516171819202122from multiprocessing import Process,Queuefrom time impo">
+<meta name="description" content="计算机408复习（一）数据库什么是数据？什么是数据库？ 数据是数据库存储的基本对象。 数据库（DB database）是长期存储在计算机内、有组织的、可共享的大量数据集合。数据库管理系统（DBMS database manager system）提供数据定义语言（DDL）用户可以方便地对数据库中的数据对象的组成与结构进行定义。数据库系统（DBS）：由数据库，数据库管理系统，应用程序和数据库管理员组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习之路（五）">
-<meta property="og:url" content="http://example.com/child/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/index.html">
+<meta property="og:title" content="计算机408复习（一）">
+<meta property="og:url" content="http://example.com/child/2021/03/06/%E8%AE%A1%E7%AE%97%E6%9C%BA408%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="MBaNing">
-<meta property="og:description" content="进程间通信我们都知道进程是一个独立分配的一个单位，那么该如何实现不同进程之间的通信？ 实现方法：1.利用队列实现通信 2.利用进程池来进行通信 利用队列的demo（实现方法：使用一个队列来依靠其FIFO特性进行读取）： 12345678910111213141516171819202122from multiprocessing import Process,Queuefrom time impo">
+<meta property="og:description" content="计算机408复习（一）数据库什么是数据？什么是数据库？ 数据是数据库存储的基本对象。 数据库（DB database）是长期存储在计算机内、有组织的、可共享的大量数据集合。数据库管理系统（DBMS database manager system）提供数据定义语言（DDL）用户可以方便地对数据库中的数据对象的组成与结构进行定义。数据库系统（DBS）：由数据库，数据库管理系统，应用程序和数据库管理员组">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-06T08:13:52.000Z">
-<meta property="article:modified_time" content="2021-02-25T08:56:09.652Z">
+<meta property="article:published_time" content="2021-03-06T02:30:04.000Z">
+<meta property="article:modified_time" content="2021-03-06T02:33:02.665Z">
 <meta property="article:author" content="MBaNing">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/child/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/">
+<link rel="canonical" href="http://example.com/child/2021/03/06/%E8%AE%A1%E7%AE%97%E6%9C%BA408%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/">
 
 
 <script class="page-configurations">
@@ -50,7 +50,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>python学习之路（五） | MBaNing</title>
+<title>计算机408复习（一） | MBaNing</title>
   
 
 
@@ -167,7 +167,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="nav-number">1.</span> <span class="nav-text">进程间通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9Alamda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">补充：lamda表达式</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA408%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">计算机408复习（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.1.</span> <span class="nav-text">数据库</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,7 +243,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/06/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%94%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/06/%E8%AE%A1%E7%AE%97%E6%9C%BA408%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avartar.jpg">
@@ -256,7 +256,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          python学习之路（五）
+          计算机408复习（一）
         </h1>
 
         <div class="post-meta-container">
@@ -266,23 +266,17 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-02-06 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-06T16:13:52+08:00">2021-02-06</time>
+      <time title="创建时间：2021-03-06 10:30:04 / 修改时间：10:33:02" itemprop="dateCreated datePublished" datetime="2021-03-06T10:30:04+08:00">2021-03-06</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-25 16:56:09" itemprop="dateModified" datetime="2021-02-25T16:56:09+08:00">2021-02-25</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">计算机基础综合</span></a>
         </span>
     </span>
 
@@ -296,13 +290,47 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>我们都知道进程是一个独立分配的一个单位，那么该如何实现不同进程之间的通信？</p>
-<p>实现方法：1.利用队列实现通信 2.利用进程池来进行通信</p>
-<p>利用队列的demo（实现方法：使用一个队列来依靠其FIFO特性进行读取）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,Queue</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#写入方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write</span>(<span class="params">q</span>):</span></span><br><span class="line">    a=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">        print(<span class="string">&#x27;开始写入的值：%s&#x27;</span>%i)</span><br><span class="line">        q.put(i)<span class="comment">#数据流入队列</span></span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reader</span>(<span class="params">q</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(q.qsize()):</span><br><span class="line">        print(<span class="string">&#x27;读取到的值：%s&#x27;</span>%q.get())</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Queue()</span><br><span class="line">    pw = Process(target=write(q))</span><br><span class="line">    pr = Process(target=reader(q))</span><br><span class="line">    pw.start()</span><br><span class="line">    pr.start()</span><br><span class="line">    pr.join()</span><br><span class="line">    pw.join()</span><br></pre></td></tr></table></figure>
-<p>利用进程池的demo（<a target="_blank" rel="noopener" href="https://lyndegit.github.io/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/">进程池复习</a>）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q=Manager().Queue()</span><br><span class="line">    pool =Pool(<span class="number">3</span>)</span><br><span class="line">    pool.apply(write,(q,))</span><br><span class="line">    pool.apply(reader,(q,))</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br><span class="line"><span class="comment">#write，reader方法与上面一样，需要导入Manager包中的队列</span></span><br></pre></td></tr></table></figure>
-<h3 id="补充：lamda表达式"><a href="#补充：lamda表达式" class="headerlink" title="补充：lamda表达式"></a>补充：lamda表达式</h3><p>lambda表达式可以用来声明匿名函数，lambda函数是一种简单的，在同一行中定义函数的方法，lambda函数实际生成了一个函数对象<br>    lambda表达式只允许包含一个表达式，不能包含复杂语句，表达式结果就是函数的返回值<br>    语法demo：<br>        lambda arg1,arg2,arg3….:&lt;表达式&gt;<br>    arg1、arg2、arg3为函数的参数，表达式相当于函数体<br>    例： f = lambda a,b,c: a+b+c<br>    print (f(2,3,4))<br>    返回：9</p>
+        <h3 id="计算机408复习（一）"><a href="#计算机408复习（一）" class="headerlink" title="计算机408复习（一）"></a>计算机408复习（一）</h3><h5 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h5><p>什么是数据？什么是数据库？</p>
+<p>数据是数据库存储的基本对象。 数据库（DB database）是长期存储在计算机内、有组织的、可共享的大量数据集合。数据库管理系统（DBMS database manager system）提供数据定义语言（DDL）用户可以方便地对数据库中的数据对象的组成与结构进行定义。数据库系统（DBS）：由数据库，数据库管理系统，应用程序和数据库管理员组成的存储，管理，处理和维护数据的系统。</p>
+<p>注意区分数据库系统和数据库管理系统还有数据库应用系统的区别</p>
+<p>一、数据库系统、数据库管理系统、数据库应用系统三者的区别</p>
+<p>1.本质不同</p>
+<p>数据库系统是一种软件系统，数据库管理系统本质就是一个软件，而数据库应用系统则是一个计算机应用系统</p>
+<p>数据库系统是为适应数据处理的需要而发展起来的一种较为理想的数据处理系统，也是一个为实际可运行的存储、维护和应用系统提供数据的软件系统，是存储介质 、处理对象和管理系统的集合体。</p>
+<p>数据库管理系统就是实现把用户意义下抽象的逻辑数据处理，转换成为计算机中具体的物理数据处理的软件。</p>
+<p>数据库应用系统是在数据库管理系统（DBMS）支持下建立的一种计算机应用系统。</p>
+<p>2.组成成分不同</p>
+<p>数据库系统DBS（Data Base System，简称DBS）通常由软件、数据库和数据管理员组成。其软件主要包括操作系统、各种宿主语言、实用程序以及数据库管理系统。</p>
+<p>数据库管理系统由数据库语言和数据库管理例行程序组成。</p>
+<p>数据库应用系统是由数据库系统、应用程序系统、用户组成的，具体包括：数据库、数据库管理系统、数据库管理员、硬件平台、软件平台、应用软件、应用界面。</p>
+<p>二、数据库系统、数据库管理系统、数据库应用系统三者的联系</p>
+<p>1.三者都用于管理数据库。功能都是对数据库进行管理。</p>
+<p>2.其中数据库系统和数据库应用系统的组成成分中都包含有数据库管理系统，这两者都是通过数据库管理系统来实现对数据库的管理和操控。</p>
+<p>总的来说：数据库应用系统∈数据库管理系统∈数据库系统（越往右约贴近底层）</p>
+<p>关系范式:</p>
+<p>范式理论是为了解决数据冗余，更新异常，插入异常，删除异常的情形，高级别的范式依赖于低级别的范式，1NF是最低级别的范式。</p>
+<p>第一范式（关系数据库中最基本的要求）</p>
+<p>课本原话：符合1NF关系中的每个属性都不可再分，同一列中不能投多个值，即实体中的某个属性不能有多个值或者不能有重复的属性。属性，就是列的意思，所以就可以理解为每一列不可以再分。解决方法：将分出来的子列添加到列后面，并将原有子列删除，形成新的属性。</p>
+<p>例如：北京市xx路xx小区xx号” 也不符合1NF，可以将其拆开成不同的列如(市， 路， 小区， 号)。</p>
+<p>第二范式</p>
+<p>课本原话：每个非主属性完全依赖于码，可以通过分解来满足2NF</p>
+<p>例：如关系模型（职工号，姓名，职称，项目号，项目名称）中，职工号-&gt;姓名，职工号-&gt;项目名称，那么其不依赖于主码，解决方法：将表拆分成职工信息表和项目表。</p>
+<p>第三范式</p>
+<p>课本原话：3NF在2NF的基础上，消除了<strong>非主属性</strong>对<strong>码</strong>的<strong>传递函数依赖</strong>，简而言之，第三范式就是属性不依赖于其他非主属性。即对码有直接关系而不是间接关系。</p>
+<p>补充几个重要概念：</p>
+<p>　　几个重要的概念:</p>
+<p>　　1.函数依赖：A–&gt;B，如果通过A属性（属性组）的值，可以确定唯一的B属性的值，则称B依赖于A</p>
+<p>　　　　例如：学号—-&gt;姓名  （学号、课程名称 的属性组）–&gt; 分数</p>
+<p>　　2.完全函数依赖：A–&gt;B  如果A是一个属性组，则B属性值的确定需要依赖A属性组的中所有的属性值</p>
+<p>　　　　例如：（学号、课程名称）–&gt; 分数</p>
+<p>　　3. 部分函数依赖： A–&gt;B  如果A是一个属性组，则B属性值的确定只需要依赖A属性组的中某一些的属性值（第二范式就是消除这个）</p>
+<p>　　　　例如：（学号 、课程名称）–&gt; 姓名</p>
+<p>　　4.传递函数依赖：A – &gt;B , B – &gt;C 如果通过A属性（属性组）的值，可以确定唯一的B属性的值，再通过B属性（属性组）的值，可以唯一确定C属性的值，那么称C传递依赖于A</p>
+<p>　　　　例如： 学号 –&gt; 系名 ，系名 –&gt; 系主任 </p>
+<p> 　5.码 ：如果在一张表中，一个属性或属性组，被其他所有的属性（非主属性）所完全函数依赖，则称这个属性（属性组）为该表的码。（上面的表，学号和课程名称所构成的属性组就是码）</p>
+<p>　　　　例如： 该表中码为 （学号、课程名称）</p>
+<p>　　主属性： 码中所有属性</p>
+<p>　　非主属性： 除码之外的所有属性</p>
 
     </div>
 
@@ -316,14 +344,11 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/02/05/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89/" rel="prev" title="python学习之路（三）">
-                  <i class="fa fa-chevron-left"></i> python学习之路（三）
+                <a href="/2021/03/06/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%83%EF%BC%89/" rel="prev" title="算法整理（七）">
+                  <i class="fa fa-chevron-left"></i> 算法整理（七）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/02/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(javascript)/" rel="next" title="正则表达式（javascript实现）">
-                  正则表达式（javascript实现） <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
