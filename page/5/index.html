@@ -131,7 +131,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">23</span></a></li>
         <li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
   </ul>
 </nav>
@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -230,6 +230,176 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/04/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9Bnpm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/04/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9Bnpm/" class="post-title-link" itemprop="url">关于npm装包时-s和-d的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-04 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-04T16:13:52+08:00">2021-02-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-19 23:33:36" itemprop="dateModified" datetime="2021-02-19T23:33:36+08:00">2021-02-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/npm/" itemprop="url" rel="index"><span itemprop="name">npm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="keyword">name</span> -<span class="keyword">save</span> 简写（npm install <span class="keyword">name</span> -S） 自动把模块和版本号添加到dependencies。</span><br><span class="line">npm install <span class="keyword">name</span> -<span class="keyword">save</span>-dve 简写（npm install <span class="keyword">name</span> -D） 自动把模块和版本号添加到devdependencies。</span><br></pre></td></tr></table></figure>
+<p>-D后，安装包会在package中的 devDependencies对象中。简称dev。dev是在开发环境中要用到的。</p>
+<p>-S后，安装包会在package中的 dependencies 对象中。简称dep。dep是在生产环境中要用到的。</p>
+<p>举个例子：</p>
+<p>构建工具：gulp和webpack是用来压缩代码，打包等需要的工具，程序实际运行的时候并不需要，就要放在dev中所以要用 -D</p>
+<p>项目插件：例如element ui、echarts这种插件要在运行中使用的，就要放在dep中所以就用 -S</p>
+<p>一般我们项目插件，在api中都可以看到，一般都是-S。因为这些插件是在程序运行中使用的。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/03/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/03/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89/" class="post-title-link" itemprop="url">python学习之路（二）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-03 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-03T16:13:52+08:00">2021-02-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-19 23:27:00" itemprop="dateModified" datetime="2021-02-19T23:27:00+08:00">2021-02-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>———-工厂模式与单例模式———————-<br>一、什么是设计模式？<br>    设计模式是面向对象语言特有的内容，是我们在面临某一类问题时候固定的做法。即：前人总结经验所做出的特定总结性解决方案<br>    初学者最常用两个常用的模式：工厂模式，单例模式<br>二、工厂模式：创建者和调用者分离，使用专门的工厂类将选择实现类、创建对象进行统一的管理<br>    代码实现：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">CarFactory:  </span>#创建者</span><br><span class="line">	<span class="symbol">def</span> <span class="symbol">creat_car</span>(<span class="symbol">self,<span class="symbol">brand</span></span>):	#创建对象车的方法</span><br><span class="line">		<span class="symbol">if</span> <span class="symbol">brand</span> == &quot;奔驰&quot;:</span><br><span class="line">			<span class="symbol">return</span> <span class="symbol">Benz</span>()</span><br><span class="line">		<span class="symbol">elif</span> <span class="symbol">brand</span> ==&quot;宝马&quot;:</span><br><span class="line">			<span class="symbol">return</span> <span class="symbol">BMW</span>()</span><br><span class="line">		<span class="symbol">elif</span> <span class="symbol">brand</span> == &quot;比亚迪&quot;:</span><br><span class="line">			<span class="symbol">return</span> <span class="symbol">BYD</span>()</span><br><span class="line">		<span class="symbol">else:</span></span><br><span class="line">			<span class="symbol">return</span> &quot;品牌未知&quot;</span><br><span class="line"><span class="symbol">class</span> <span class="symbol">Benz:	</span>#空的汽车品牌类</span><br><span class="line">	<span class="symbol">pass</span></span><br><span class="line"><span class="symbol">class</span> <span class="symbol">BMW:</span></span><br><span class="line">	<span class="symbol">pass</span></span><br><span class="line"><span class="symbol">class</span> <span class="symbol">BYD:</span></span><br><span class="line">	<span class="symbol">pass</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ini"><figcaption><span>生产汽车</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">factory</span> = CarFactory()  <span class="comment">#调用者</span></span><br><span class="line"><span class="attr">c1</span> = factory.creat_car(<span class="string">&quot;奔驰&quot;</span>) <span class="comment">#返回地址空间</span></span><br><span class="line"><span class="attr">c2</span> = factory.creat_car(<span class="string">&quot;奥拓&quot;</span>)	<span class="comment">#返回“品牌未知”</span></span><br></pre></td></tr></table></figure>
+<p>三、单例模式：核心作用是确保一个类只有一个实例（避免反复调用反复生产，造成资源浪费）并且提供一个方芬该实例的全局访问点。<br>即:单例模式只生成一个实例对象，减少资源开销。当一个对象的产生需要比较多的资源，如读取配置文件，产生其他依赖对象时，可以产生一个“单例对象”，然后永久驻留内存中，从而极大降低开销。<br>    代码实现:<br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span>:</span></span><br><span class="line">	__Obj = <span class="literal">None</span> <span class="comment">#类属性,类对象，默认为空</span></span><br><span class="line">	__init_flag = <span class="literal">True</span> <span class="comment">#默认初始对象的标志</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls,*args,**kwargs</span>):</span></span><br><span class="line">	<span class="keyword">if</span> cls.__Obj ==<span class="literal">None</span>:  <span class="comment">#初始化一个类,并返回</span></span><br><span class="line">		cls.__obj == <span class="built_in">object</span>.__new__(cls)</span><br><span class="line">	<span class="keyword">return</span> cls.__Obj</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name</span>):</span> <span class="comment">#初始化一个实例</span></span><br><span class="line">		<span class="keyword">if</span> MySingleleton.__init_flag:</span><br><span class="line">			print(<span class="string">&quot;init....&quot;</span>)</span><br><span class="line">			self.name = name <span class="comment">#实例属性</span></span><br><span class="line">			MySingleleton.__init_flag = <span class="literal">False</span></span><br><span class="line">			<span class="comment">#使标志开关变为false，只产生一个对象</span></span><br><span class="line">a = MySingleton(<span class="string">&quot;aa&quot;</span>)</span><br><span class="line">b = MySingleton(<span class="string">&quot;bb&quot;</span>)</span><br><span class="line"><span class="comment">#这俩指向同一个对象 a</span></span><br><span class="line">四、工厂模式结合单例模式</span><br><span class="line">	说明：生成一个车间对象加多个车对象</span><br><span class="line">		代码实现：</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarFactory</span>:</span>  <span class="comment">#创建者</span></span><br><span class="line">	__Obj = <span class="literal">None</span> <span class="comment">#类属性,类对象，默认为空</span></span><br><span class="line">	__init_flag = <span class="literal">True</span> <span class="comment">#默认初始对象的标志</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">creat_car</span>(<span class="params">self,brand</span>):</span>	<span class="comment">#创建对象车的方法</span></span><br><span class="line">		<span class="keyword">if</span> brand == <span class="string">&quot;奔驰&quot;</span>:</span><br><span class="line">			<span class="keyword">return</span> Benz()</span><br><span class="line">		<span class="keyword">elif</span> brand ==<span class="string">&quot;宝马&quot;</span>:</span><br><span class="line">			<span class="keyword">return</span> BMW()</span><br><span class="line">		<span class="keyword">elif</span> brand == <span class="string">&quot;比亚迪&quot;</span>:</span><br><span class="line">			<span class="keyword">return</span> BYD()</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&quot;品牌未知&quot;</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls,*args,**kwargs</span>):</span></span><br><span class="line">		<span class="keyword">if</span> cls.__Obj ==<span class="literal">None</span>:  <span class="comment">#初始化一个类,并返回</span></span><br><span class="line">			cls.__obj == <span class="built_in">object</span>.__new__(cls)</span><br><span class="line">		<span class="keyword">return</span> cls.__Obj</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span> <span class="comment">#初始化一个实例</span></span><br><span class="line">		<span class="keyword">if</span> CarFactory.__init_flag:</span><br><span class="line">			print(<span class="string">&quot;init Car Making....&quot;</span>)</span><br><span class="line">			CarFactory.__init_flag = <span class="literal">False</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span>:</span>	<span class="comment">#空的汽车品牌类</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BMW</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BYD</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="comment">#生产汽车</span></span><br><span class="line">factory = CarFactory()  <span class="comment">#调用者</span></span><br><span class="line">c1 = factory.creat_car(<span class="string">&quot;奔驰&quot;</span>) <span class="comment">#返回地址空间</span></span><br><span class="line">c2 = factory.creat_car(<span class="string">&quot;奥拓&quot;</span>)	<span class="comment">#返回“品牌未知”</span></span><br><span class="line">factory2 = CarFactory()</span><br><span class="line">print(factory)</span><br><span class="line">print(factory2)</span><br><span class="line"><span class="comment">#两个对象都是指向factory</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

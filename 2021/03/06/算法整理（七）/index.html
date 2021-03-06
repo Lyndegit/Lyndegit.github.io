@@ -25,20 +25,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="关于锁机制的一些初步探讨(1)我们知道线程之间是争夺cpu而进行共享数据的，在类似于12306抢票的项目中如果抢占资源，那么可能会造成很多错误（试想下假设你和另一个同学俩人抢到了一张票那你俩谁能上车？），所以我们引进锁机制。 互斥锁如果多个线程共同对某个数据修改，则可能出现不可预料的结果，为了保证数据的正确性，需要对多个线程进行同步，最简单的同步机制就是引入互斥锁。 锁有两种状态——锁定和未锁定。">
+<meta name="description" content="算法整理（七）问题:设有90条服装信息，每条服装销售信息包括：编号ID、品牌、销售价格、销售数量，依据所定义的结构体struct clothes，完成以下功能： （1）编写void input（struct clothes *p）函数，实现从键盘输入这10条服装信息； （2）编写void output（struct clothes *p）函数，按服装销售数量从高到低将所有服装信息进行排序，然后分行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习之路（六）">
-<meta property="og:url" content="http://example.com/child/2021/02/07/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AD%EF%BC%89/index.html">
+<meta property="og:title" content="算法整理（七）">
+<meta property="og:url" content="http://example.com/child/2021/03/06/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%83%EF%BC%89/index.html">
 <meta property="og:site_name" content="MBaNing">
-<meta property="og:description" content="关于锁机制的一些初步探讨(1)我们知道线程之间是争夺cpu而进行共享数据的，在类似于12306抢票的项目中如果抢占资源，那么可能会造成很多错误（试想下假设你和另一个同学俩人抢到了一张票那你俩谁能上车？），所以我们引进锁机制。 互斥锁如果多个线程共同对某个数据修改，则可能出现不可预料的结果，为了保证数据的正确性，需要对多个线程进行同步，最简单的同步机制就是引入互斥锁。 锁有两种状态——锁定和未锁定。">
+<meta property="og:description" content="算法整理（七）问题:设有90条服装信息，每条服装销售信息包括：编号ID、品牌、销售价格、销售数量，依据所定义的结构体struct clothes，完成以下功能： （1）编写void input（struct clothes *p）函数，实现从键盘输入这10条服装信息； （2）编写void output（struct clothes *p）函数，按服装销售数量从高到低将所有服装信息进行排序，然后分行">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-07T08:13:52.000Z">
-<meta property="article:modified_time" content="2021-02-25T04:03:03.247Z">
+<meta property="article:published_time" content="2021-03-06T01:50:04.000Z">
+<meta property="article:modified_time" content="2021-03-06T01:50:38.026Z">
 <meta property="article:author" content="MBaNing">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/child/2021/02/07/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AD%EF%BC%89/">
+<link rel="canonical" href="http://example.com/child/2021/03/06/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%83%EF%BC%89/">
 
 
 <script class="page-configurations">
@@ -50,7 +50,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>python学习之路（六） | MBaNing</title>
+<title>算法整理（七） | MBaNing</title>
   
 
 
@@ -167,7 +167,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E9%94%81%E6%9C%BA%E5%88%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%88%9D%E6%AD%A5%E6%8E%A2%E8%AE%A8-1"><span class="nav-number">1.</span> <span class="nav-text">关于锁机制的一些初步探讨(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E9%94%81"><span class="nav-number">1.0.1.</span> <span class="nav-text">互斥锁</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%83%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">算法整理（七）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,7 +243,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/02/07/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%85%AD%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/06/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%83%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avartar.jpg">
@@ -256,7 +256,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          python学习之路（六）
+          算法整理（七）
         </h1>
 
         <div class="post-meta-container">
@@ -266,23 +266,17 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-02-07 16:13:52" itemprop="dateCreated datePublished" datetime="2021-02-07T16:13:52+08:00">2021-02-07</time>
+      <time title="创建时间：2021-03-06 09:50:04 / 修改时间：09:50:38" itemprop="dateCreated datePublished" datetime="2021-03-06T09:50:04+08:00">2021-03-06</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-25 12:03:03" itemprop="dateModified" datetime="2021-02-25T12:03:03+08:00">2021-02-25</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python-%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">python 学习</span></a>
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
         </span>
     </span>
 
@@ -296,15 +290,12 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="关于锁机制的一些初步探讨-1"><a href="#关于锁机制的一些初步探讨-1" class="headerlink" title="关于锁机制的一些初步探讨(1)"></a>关于锁机制的一些初步探讨(1)</h3><p>我们知道线程之间是争夺cpu而进行共享数据的，在类似于12306抢票的项目中如果抢占资源，那么可能会造成很多错误（试想下假设你和另一个同学俩人抢到了一张票那你俩谁能上车？），所以我们引进锁机制。</p>
-<h5 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h5><p>如果多个线程共同对某个数据修改，则可能出现不可预料的结果，为了保证数据的正确性，需要对多个线程进行同步，最简单的同步机制就是引入互斥锁。</p>
-<p>锁有两种状态——锁定和未锁定。某个线程要更改共享数据时，先将其锁定，此时资源的状态为“锁定”，其他线程不能更改，直到该线程释放资源，将资源的状态变成“非锁定”状态(即阻塞其他线程)其他的线程才能再次锁定该资源。互斥锁保证了每次只有一个线程进行写入操作，从而保证了多线程情况下数据的正确性。</p>
-<p>在python中使用Thread对象的lock可以实现线程同步。上锁方法（acquire）释放方法（release），对于那些需要每次只允许一个线程操作的数据，可以将其操作放到acquire和release方法之间。</p>
-<p>互斥锁demo：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread,Lock</span><br><span class="line">num =<span class="number">0</span></span><br><span class="line"><span class="comment">#创建一个互斥锁</span></span><br><span class="line">lock = Lock()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work1</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    lock.acquire() <span class="comment">#上锁</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        num +=<span class="number">1</span></span><br><span class="line">    lock.release()<span class="comment">#循环一次解锁</span></span><br><span class="line">    print(<span class="string">&#x27;执行test1函数的num值：&#x27;</span>,num)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work2</span>():</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    lock.acquire()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        num +=<span class="number">1</span></span><br><span class="line">    lock.release()</span><br><span class="line">    print(<span class="string">&#x27;执行test2函数的num值：&#x27;</span>,num)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t1 = Thread(target= work1)</span><br><span class="line">    t2 = Thread(target= work2)</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br><span class="line">    t1.join()</span><br><span class="line">    t2.join()</span><br></pre></td></tr></table></figure>
-
-
-<p>注：有时pycharm2017+版本编译器会报错空套测试。解决方法：将函数名更改（不能使用test保留关键字）</p>
+        <h3 id="算法整理（七）"><a href="#算法整理（七）" class="headerlink" title="算法整理（七）"></a>算法整理（七）</h3><p>问题:设有90条服装信息，每条服装销售信息包括：编号ID、品牌、销售价格、销售数量，依据所定义的结构体struct clothes，完成以下功能：</p>
+<p>（1）编写void input（struct clothes *p）函数，实现从键盘输入这10条服装信息；</p>
+<p>（2）编写void output（struct clothes *p）函数，按服装销售数量从高到低将所有服装信息进行排序，然后分行输出排序后的服装信息；</p>
+<p>（3）编写void output2（struct clothes *p）函数，实现将销售价格远低于平均价格的服装信息保存到当前文件夹下的“low_price.dat”文件</p>
+<p>思路：结构体排序，利用sort方法，注意文件保存的代码写法。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> ID;</span><br><span class="line">	<span class="keyword">char</span> type[<span class="number">50</span>];</span><br><span class="line">	<span class="keyword">float</span> price;</span><br><span class="line">	<span class="keyword">int</span> sell_number; </span><br><span class="line">&#125;clothes;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">comparsion</span><span class="params">(clothes a,clothes b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.sell_number&lt;b.sell_number;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(clothes *p)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;p[i].ID&gt;&gt;p[i].type&gt;&gt;p[i].price&gt;&gt;p[i].sell_number;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(clothes *p)</span></span>&#123;</span><br><span class="line">	sort(p,p+<span class="number">3</span>,comparsion);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;p[i].ID&lt;&lt;p[i].type&lt;&lt;p[i].price&lt;&lt;p[i].sell_number;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output2</span><span class="params">(clothes *p)</span></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> s_price=<span class="number">0</span>;</span><br><span class="line">	ofstream ofs;</span><br><span class="line">	ofs.open(<span class="string">&quot;low_price.txt&quot;</span>,ios::out);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">		s_price += p[i].price;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(p[i].price&lt;(s_price/<span class="number">3</span>))&#123;</span><br><span class="line">			ofs&lt;&lt; p[i].price&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	clothes c[<span class="number">3</span>];</span><br><span class="line">	input(c);</span><br><span class="line">	output(c);</span><br><span class="line">	output2(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -318,14 +309,11 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/02/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(javascript)/" rel="prev" title="正则表达式（javascript实现）">
-                  <i class="fa fa-chevron-left"></i> 正则表达式（javascript实现）
+                <a href="/2021/03/06/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E5%85%AD%EF%BC%89/" rel="prev" title="算法整理（六）">
+                  <i class="fa fa-chevron-left"></i> 算法整理（六）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/02/08/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%83%EF%BC%89/" rel="next" title="python学习之路（七）">
-                  python学习之路（七） <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
