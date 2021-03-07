@@ -131,7 +131,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li>
         <li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
   </ul>
 </nav>
@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -230,6 +230,94 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/07/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E5%85%AB%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/07/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E5%85%AB%EF%BC%89/" class="post-title-link" itemprop="url">算法整理（八）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-03-07 09:50:04 / 修改时间：22:24:19" itemprop="dateCreated datePublished" datetime="2021-03-07T09:50:04+08:00">2021-03-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="算法整理（八）"><a href="#算法整理（八）" class="headerlink" title="算法整理（八）"></a>算法整理（八）</h3><p>1.auto用法：</p>
+<p>C++中的auto关键字是一个类型说明符，通过变量的初始值或者表达式中参与运算的数据类型来推断变量的类型。编程时通常需要把表达式值式赋给变量，这就要求在声明变量时清楚的知道表达式的类型,C++11新标准引入了auto 类型说明符，让编译器去分析表达式的类型。由于，需要编译器推断变量或表达式的类型，所以，auto定义的变量必须初始化。<br>综上：auto 即用作自动匹配数据类型，用作缺省情况。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,num ;</span><br><span class="line">	num =<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;The num =&quot;</span>&lt;&lt;num++&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">auto</span> <span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;The internal block num = &quot;</span>&lt;&lt;num ++&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>cout_demo:</p>
+<p>The num = 2</p>
+<p>The internal block num = 1</p>
+<p>The num = 3</p>
+<p>The internal block num = 1</p>
+<p>The num =4</p>
+<p>The internal block num = 1</p>
+<p>2.调用自定义后移函数move(int *a, int n, int m)来进行循环移位，对n(n&lt;20)个整数，使其前面各数顺序向后移m个位置，最后m个数变成最前面m个数，如下： n=10, m=3时：输入：1 2 3 4 5 6 7 8 9 10，输出：8 9 10 1 2 3 4 5 6 7</p>
+<p>思路：再开一个数组b，然后b[(i+n+m)%10] = a[i]。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;请输入n的个数&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> a[n];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		a[i] = i+<span class="number">1</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">int</span> b[n];</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;请输入后移m的位置&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		b[(i+n+m)%<span class="number">10</span>] = a[i];</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;b[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.输入年月日，判断是今年的第几天</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> date[<span class="number">12</span>]=&#123;<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge_run</span><span class="params">(<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(y%<span class="number">400</span>==<span class="number">0</span>||(y%<span class="number">100</span>!=<span class="number">0</span>&amp;&amp;y%<span class="number">4</span>==<span class="number">0</span>))&#123; <span class="comment">//判断是否为闰年 </span></span><br><span class="line">		date[<span class="number">1</span>] = <span class="number">29</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		date[<span class="number">1</span>] = <span class="number">28</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> singal;</span><br><span class="line">	<span class="keyword">int</span> y,m,d,days=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;input the year&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;y;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;input the mouth&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;input the day&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;d;</span><br><span class="line">	singal = judge_run(y); </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;m<span class="number">-1</span>;i++)&#123;</span><br><span class="line">		days += date[i]; </span><br><span class="line">	&#125;</span><br><span class="line">	days += d;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;days;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -703,87 +791,6 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(x&gt;=<span class="number">90</span>)?<span class="built_in">cout</span>&lt;&lt;<span class="string">&#x27;A&#x27;</span>:(x&gt;=<span class="number">70</span>&amp;&amp;x&lt;=<span class="number">89</span>)?<span class="built_in">cout</span>&lt;&lt;<span class="string">&#x27;B&#x27;</span>:<span class="built_in">cout</span>&lt;&lt;<span class="string">&#x27;D&#x27;</span>; <span class="comment">//运算符嵌套写法</span></span><br></pre></td></tr></table></figure>
 <p>3.将一个正整数分解质因数。例如：输入42,打印出<br>$$<br>42=2<em>3</em>7<br>$$<br>解析:利用while循环，分解其因数，例如42，可分解出6x7的两个因数，而6可以再次分解成2x3。（注意除去1和本身作为因数的情况。）</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,i); <span class="comment">//分解质因数 核心代码 </span></span><br><span class="line">            n/=i;</span><br><span class="line">            <span class="keyword">if</span>(n!=<span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/04/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E5%9B%9B%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/04/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E5%9B%9B%EF%BC%89/" class="post-title-link" itemprop="url">算法整理（四）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-04 16:13:30 / 修改时间：16:14:19" itemprop="dateCreated datePublished" datetime="2021-03-04T16:13:30+08:00">2021-03-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="算法整理（四）"><a href="#算法整理（四）" class="headerlink" title="算法整理（四）"></a>算法整理（四）</h3><p>1.关于结构体数组的排序，利用vector容器并且重写sort的comparsion方法，当用 大于号就是从大到小排序,用小于号就是从小到大排序。</p>
-<p>例题：输入10个数据，要求将他们由小到大排序，然后输出排序后的顺序，并且输出每个数据原来的输入顺序。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//结构体数组的排序 </span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="keyword">int</span> sx;</span><br><span class="line">&#125;Num;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">comparsion</span><span class="params">(Num a,Num b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.num&lt;b.num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="built_in">vector</span>&lt;Num&gt; <span class="title">array</span><span class="params">(<span class="number">10</span>)</span></span>; </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;<span class="built_in">array</span>[i].num;</span><br><span class="line">		<span class="built_in">array</span>[i].sx = i;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(<span class="built_in">array</span>.begin(), <span class="built_in">array</span>.end(), comparsion);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt; <span class="number">10</span>;i++)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">array</span>[i].num;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">array</span>[i].sx&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<p>2.关于线性晒素数</p>
-<pre><code> 2.1朴素算法:时间复杂度o（sqrt（n））</code></pre>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_prime</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="comment">//筛素数朴素方法 ，时间复杂度 o（sqrt（n）） </span></span><br><span class="line">	<span class="keyword">if</span>(x==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;=x;i++)</span><br><span class="line">		<span class="keyword">if</span>(x%i==<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​    2.2欧拉筛法： 核心思想：合数 = 质因数*因数（未满足素数定义，被筛掉）,时间复杂度o（n）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ll maxn =<span class="number">1001</span>;</span><br><span class="line">ll prime[maxn]; <span class="comment">//素数表 </span></span><br><span class="line"><span class="keyword">bool</span> sf [maxn]; <span class="comment">//判断这个数是不是素数 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sushu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ll num =<span class="number">0</span>; <span class="comment">//记录筛到第几个素数</span></span><br><span class="line">	<span class="built_in">memset</span>(sf,<span class="literal">true</span>,<span class="keyword">sizeof</span>(sf));</span><br><span class="line">	sf[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">	sf[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">2</span>;i&lt;=maxn;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(sf[i]) prime[++num] = i ;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">1</span>;j&lt;num;j++)&#123;</span><br><span class="line">			<span class="comment">//内层枚举num以内的质数</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(i*prime[j]&gt;maxn) <span class="keyword">break</span>; <span class="comment">//筛完结束</span></span><br><span class="line">				sf[i*prime[j]] = <span class="literal">false</span>; <span class="comment">//核心，合数= 质因数*因数；凡是满足的均筛掉</span></span><br><span class="line">				<span class="keyword">if</span>(i%prime[j] == <span class="number">0</span>) <span class="keyword">break</span>; <span class="comment">////避免重复筛</span></span><br><span class="line">			 &#125; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
