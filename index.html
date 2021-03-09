@@ -131,7 +131,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">26</span></a></li>
         <li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
   </ul>
 </nav>
@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -230,6 +230,107 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/09/xxx-github-io%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avartar.jpg">
+      <meta itemprop="name" content="MBaNing">
+      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MBaNing">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/09/xxx-github-io%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">xxx.github.io的解决方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-03-09 15:16:50 / 修改时间：15:17:53" itemprop="dateCreated datePublished" datetime="2021-03-09T15:16:50+08:00">2021-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%BB%BA%E7%AB%99%E5%8E%86%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">建站历程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="解决打不开-xxx-github-io的方法"><a href="#解决打不开-xxx-github-io的方法" class="headerlink" title="解决打不开 xxx.github.io的方法"></a>解决打不开 xxx.github.io的方法</h3><p>由于DNS的某方面问题，github.io后缀的网站经常崩，可以说让人非常心累，那么有什么可以一举多得配置一次，近期内多次访问都不会报404的方法呢？</p>
+<p>网上的方法都是采用修改 hosts文件的方法，将网站的地址添加到host文件中，路径：<code>C:\Windows\System32\drivers\etc </code> 并手动添加ip地址的域名映射。</p>
+<p>这样固然是一个较为妥当的解决方法，但不能解决所有github的pages打不开的问题，所以我选择修改DNS地址，虽然host请求级别高于dns，但是我最近经常访问github，别人的博客，或者项目文档都是xxx.github.io的地址，一个一个查服务器地址再添加host，太繁琐了。</p>
+<p>以win10为例，打开 控制面板&gt; 网络与Internet设置 &gt; 网络共享中心<br>点击WLAN连接，在WLAN状态中点击-&gt;属性-&gt;Internet 协议版本4 (TCP/Ipv4),修改dns地址，将备用dns地址设为 8.8.8.8 (谷歌）首选可以设为本地运营商的或者公共dns服务器的，百度都可以查到；因为谷歌的服务器是在国外，所以可以访问形如xxx.github.io的网站，但是访问国内的网站速度可能会慢，所以才设为备选；首选设置成国内的，这样不影响正常使用。这里我首选服务器配置的是阿里的，备用选择谷歌。</p>
+<p>这里给大家几个公共dns地址<br>PublicDNS</p>
+<pre><code>首选：119.29.29.29
+备选：182.254.116.116</code></pre>
+<p>114DNS</p>
+<pre><code>首选：114.114.114.114
+备选：114.114.114.115</code></pre>
+<p>阿里 AliDNS</p>
+<pre><code>首选：233.5.5.5
+备选：223.6.6.6</code></pre>
+<p>360</p>
+<pre><code>首选（电信/移动/铁通）：101.226.4.6
+
+备选（电信/移动/铁通）：218.30.118.6
+
+首选（联通）：123.125.81.6
+
+备选（联通）：140.207.198.6</code></pre>
+<p>百度DNS</p>
+<pre><code>首选：180.76.76.76</code></pre>
+<p>CNNIC SDNS</p>
+<pre><code>首选：1.2.4.8
+
+备选：202.98.0.68</code></pre>
+<p>感谢大佬文章的启发：<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43769878/article/details/109217112">https://blog.csdn.net/weixin_43769878/article/details/109217112</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -722,95 +823,8 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/05/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%BA%94%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avartar.jpg">
-      <meta itemprop="name" content="MBaNing">
-      <meta itemprop="description" content="To see the world, things dangerous to come to. To see behind walls, to draw closer. To find each other and to feel. That is the purpose of life.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MBaNing">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/05/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%BA%94%EF%BC%89/" class="post-title-link" itemprop="url">算法整理（五）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-05 08:13:30 / 修改时间：15:58:04" itemprop="dateCreated datePublished" datetime="2021-03-05T08:13:30+08:00">2021-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="算法整理（五）"><a href="#算法整理（五）" class="headerlink" title="算法整理（五）"></a>算法整理（五）</h3><p>1.原题：一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少？</p>
-<p>解析：本题出的非常好，短短一行字，初看觉得应该不是太难，但是里面掺杂了大量的数学思维及分析。我们来解析一下;</p>
-<p>方法一：用for循环暴力破解，如果不考虑时间复杂度光看跑出最终结果的话，思维量少，也算尚可的解答方案。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++)<span class="comment">//我们要判断的数</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">1000</span>; j++)<span class="comment">//判断i+100是否是j的平方数</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i + <span class="number">100</span> == j * j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(k = j; k &lt; <span class="number">1000</span>; k++)<span class="comment">//判断i+168是否是k的平方</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(i + <span class="number">168</span> == k * k)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>方法二（力荐）：由题意我们设该数为x，其加100后为y方，再加168后为z方。则可列出三元二次方程为：<br>$$ {]}<br>\begin{cases}<br>x+100=y^2\<br>y^2+168 = z^2\<br>\end{cases}<br>$$<br>公式二变形并且右项化为乘积的形式后既得<br>$$<br>168 = (z+y)(z-y)<br>$$<br>z+y和z-y同为正或同为负，此时值为正数（168），这里设y与z均为正值，则z+y与z-y也为正值且其值大于0小于等于168.公式一我们可知<br>$$<br>x+100=y^2<br>$$<br>我们可知x大于等于-100</p>
-<p>综上：我们得到的方程组的解的条件是：<br>$$<br>\begin{cases}<br>x+100=y^2\<br>y^2+168 = z^2\<br>0&lt;z+y&lt;=168\<br>0&lt;z-y&lt;=168\<br>x&gt;=-100\<br>\end{cases}<br>$$<br>可根据其公式，写出如下代码：(比起方法一：时间复杂度大大降低，较为优化)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">-100</span>;</span><br><span class="line">	<span class="keyword">double</span> y =<span class="number">0</span>, z= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		y = <span class="built_in">sqrt</span>(x+<span class="number">100</span>);</span><br><span class="line">		z = <span class="built_in">sqrt</span>(x+<span class="number">100</span>+<span class="number">168</span>);</span><br><span class="line">		<span class="keyword">if</span>(y == (<span class="keyword">int</span>) y &amp;&amp;z==(<span class="keyword">int</span>) z)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		x++;</span><br><span class="line">	&#125;<span class="keyword">while</span>((z+y)&gt;<span class="number">0</span>&amp;&amp;z+y&lt;=<span class="number">168</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.问题：利用条件运算符的嵌套来完成此题：学习成绩&gt;=90分的同学用A表示，70-89分之间的用B表示，60-70分之间的用C表示，60以下的用D表示。</p>
-<p>解析：本题重点回顾下条件运算符的嵌套</p>
-<p>基本使用：A？B：C（条件A，A为真执行B否则执行C）</p>
-<p>对于本题的嵌套使用：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(x&gt;=<span class="number">90</span>)?<span class="built_in">cout</span>&lt;&lt;<span class="string">&#x27;A&#x27;</span>:(x&gt;=<span class="number">70</span>&amp;&amp;x&lt;=<span class="number">89</span>)?<span class="built_in">cout</span>&lt;&lt;<span class="string">&#x27;B&#x27;</span>:<span class="built_in">cout</span>&lt;&lt;<span class="string">&#x27;D&#x27;</span>; <span class="comment">//运算符嵌套写法</span></span><br></pre></td></tr></table></figure>
-<p>3.将一个正整数分解质因数。例如：输入42,打印出<br>$$<br>42=2<em>3</em>7<br>$$<br>解析:利用while循环，分解其因数，例如42，可分解出6x7的两个因数，而6可以再次分解成2x3。（注意除去1和本身作为因数的情况。）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,i); <span class="comment">//分解质因数 核心代码 </span></span><br><span class="line">            n/=i;</span><br><span class="line">            <span class="keyword">if</span>(n!=<span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
