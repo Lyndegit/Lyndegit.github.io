@@ -25,20 +25,25 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="计算机图形学基础（图形的表示及数据结构）名词解释：规则对象：是指能用欧式集合进行描述的物体，如点，直线，曲线，平面，曲面或实体。 不规则对象：指不能用欧式几何进行描述的物体。 图形信息：指构成对象的点，线，面的位置和几何尺寸，以及他们相互间的关系等都是图形信息。 非图形信息：表示对象图形的线型，颜色，亮度以及供模拟和分析用的质量，比重，体积等数据，是有关对象的非图形信息。 几何信息：一般指形体在欧">
+<meta name="description" content="计算机图形学（二）应用拉普拉斯算子的图像边缘处理拉普拉斯算子是n维欧几里德空间中的一个二阶微分算子，定义为梯度（▽f）的散度（▽·f）。因此如果f是二阶可微的实函数，则f的拉普拉斯算子定义为：  f的拉普拉斯算子也是笛卡尔坐标系xi中的所有非混合二阶偏导数：  （以上摘自百度百科） 那么看上去这么高深的拉普拉斯算子如何通俗易懂的理解呢？他又能用来作什么？ https:&#x2F;&#x2F;www.zhihu.com">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机图形学（一）">
-<meta property="og:url" content="http://example.com/child/2021/03/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="计算机图形学（二）">
+<meta property="og:url" content="http://example.com/child/2021/03/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="MBaNing">
-<meta property="og:description" content="计算机图形学基础（图形的表示及数据结构）名词解释：规则对象：是指能用欧式集合进行描述的物体，如点，直线，曲线，平面，曲面或实体。 不规则对象：指不能用欧式几何进行描述的物体。 图形信息：指构成对象的点，线，面的位置和几何尺寸，以及他们相互间的关系等都是图形信息。 非图形信息：表示对象图形的线型，颜色，亮度以及供模拟和分析用的质量，比重，体积等数据，是有关对象的非图形信息。 几何信息：一般指形体在欧">
+<meta property="og:description" content="计算机图形学（二）应用拉普拉斯算子的图像边缘处理拉普拉斯算子是n维欧几里德空间中的一个二阶微分算子，定义为梯度（▽f）的散度（▽·f）。因此如果f是二阶可微的实函数，则f的拉普拉斯算子定义为：  f的拉普拉斯算子也是笛卡尔坐标系xi中的所有非混合二阶偏导数：  （以上摘自百度百科） 那么看上去这么高深的拉普拉斯算子如何通俗易懂的理解呢？他又能用来作什么？ https:&#x2F;&#x2F;www.zhihu.com">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-04T06:40:32.000Z">
-<meta property="article:modified_time" content="2021-03-04T06:41:29.976Z">
+<meta property="og:image" content="https://bkimg.cdn.bcebos.com/formula/ac0202b54d24b802a843b5b90f6adbfb.svg">
+<meta property="og:image" content="https://bkimg.cdn.bcebos.com/formula/8b7ad3570105f5b4ec6985cbc3edb6da.svg">
+<meta property="og:image" content="https://gitee.com/lynnde/photos/raw/master/photoGraphic/test.jpg">
+<meta property="og:image" content="https://gitee.com/lynnde/photos/raw/master/photoGraphic/test_cout.jpg">
+<meta property="article:published_time" content="2021-03-11T12:08:59.000Z">
+<meta property="article:modified_time" content="2021-03-11T12:12:03.703Z">
 <meta property="article:author" content="MBaNing">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bkimg.cdn.bcebos.com/formula/ac0202b54d24b802a843b5b90f6adbfb.svg">
 
 
-<link rel="canonical" href="http://example.com/child/2021/03/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/">
+<link rel="canonical" href="http://example.com/child/2021/03/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
 
 <script class="page-configurations">
@@ -50,7 +55,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>计算机图形学（一） | MBaNing</title>
+<title>计算机图形学（二） | MBaNing</title>
   
 
 
@@ -167,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%BE%E5%BD%A2%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%8F%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">计算机图形学基础（图形的表示及数据结构）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="nav-number">1.0.1.</span> <span class="nav-text">名词解释：</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">计算机图形学（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E7%9A%84%E5%9B%BE%E5%83%8F%E8%BE%B9%E7%BC%98%E5%A4%84%E7%90%86"><span class="nav-number">1.0.1.</span> <span class="nav-text">应用拉普拉斯算子的图像边缘处理</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,7 +248,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/child/2021/03/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avartar.jpg">
@@ -256,7 +261,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          计算机图形学（一）
+          计算机图形学（二）
         </h1>
 
         <div class="post-meta-container">
@@ -268,7 +273,7 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-03-04 14:40:32 / 修改时间：14:41:29" itemprop="dateCreated datePublished" datetime="2021-03-04T14:40:32+08:00">2021-03-04</time>
+      <time title="创建时间：2021-03-11 20:08:59 / 修改时间：20:12:03" itemprop="dateCreated datePublished" datetime="2021-03-11T20:08:59+08:00">2021-03-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -290,28 +295,22 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="计算机图形学基础（图形的表示及数据结构）"><a href="#计算机图形学基础（图形的表示及数据结构）" class="headerlink" title="计算机图形学基础（图形的表示及数据结构）"></a>计算机图形学基础（图形的表示及数据结构）</h3><h5 id="名词解释："><a href="#名词解释：" class="headerlink" title="名词解释："></a>名词解释：</h5><p>规则对象：是指能用欧式集合进行描述的物体，如点，直线，曲线，平面，曲面或实体。</p>
-<p>不规则对象：指不能用欧式几何进行描述的物体。</p>
-<p>图形信息：指构成对象的点，线，面的位置和几何尺寸，以及他们相互间的关系等都是图形信息。</p>
-<p>非图形信息：表示对象图形的线型，颜色，亮度以及供模拟和分析用的质量，比重，体积等数据，是有关对象的非图形信息。</p>
-<p>几何信息：一般指形体在欧式空间的位置与大小。</p>
-<p>拓扑信息：是形体各分量（点，线，面）的数目及相互间的<strong>连接关系</strong>。</p>
-<p>刚体运动：是指不改变图形上任意两点间的距离，也不改变图形的集合性质。</p>
-<p>拓扑运动：允许形体做弹性运动，对图形可以随意的伸张扭曲，但图形上的点不能合并成一个点。</p>
-<p>拓扑等价：几个图形，若其中一个可以通过拓扑变化从其余图形中得到，就称他们拓扑等价。</p>
-<p>正则集：令A为一个点集，r为正则运算，i为取内点运算，c为取闭包运算。r.A = c.i.A    r.A称为A的正则集。</p>
-<p>二维流形：对于实体表面上的任意一点，都可以找到一个围绕着它的任意小的邻域，该邻域与平面上的一个圆盘是拓扑等价的。</p>
-<p>非二维流形：<strong>实体表面上的一条边所连接的面多于两个</strong>。</p>
-<p>多边形网格：三维形体的边界用曲边描述时，一个很好的近似处理方法就是将物体表面看做由多边形网格拼接而成。</p>
-<p>构造实体几何法：它由多个实体间进行集合操作来组合并形成相应新的实体。</p>
-<p>体素：体素是体积元素的简称，也是数字数据于三维空间分割上的最小单位，类比于像素，扩展为三维</p>
-<p>空间位置枚举表示：将实体空间分割为大小相同，形状规则的体素（包含所表示的实体信息）然后用体素的集合来表示实体对象。</p>
-<p>八叉树：八叉树是一种用于描述三维空间的树状数据结构，八叉树的每个节点表示一个正方体的体积元素，每个节点有八个子节点，将八个子节点所表示的体积元素加在一起就等于父节点的体积。</p>
-<p>BSP树：类似于八叉树的分割方法，它将一个实体用任一位置和任意方向的平面分为两部分。试想我们生活的空间，肯定是由为数众多的天花板、墙壁和地板组成，对于每一个“板”，都将空间分为“板前”和“板后”两个部分。已知人的位置，就可根据人在“板前”还是在“板后”，知道人所能看到的物体的遮挡顺序（如果人在板前，则板前的物体遮挡所有板后的物体）。BSP者，原理很简单：它试图将所有的板（在BSP中叫做平面）组织成一棵树，每个平面均将它所在的空间分割为前后两个部分，这两个部分又分别被另外的平面分割成更小的空间……直到最后，按照前面所说的算法，确定每一个房间（在BSP中叫做叶子）相对于眼睛的遮挡顺序。这是一个非常标准的二分法，仅按照“前”和“后”两个逻辑上的概念来切分空间，这使得它在以“房间”为单位组成的室内场景里是不二之选。</p>
-<p>无限自相似性：物体的整体和局部之间细节的无限重现。（类似于花椰菜。）</p>
-<p>图素：可用一定的几何参数和属性参数描述的最基本的图形输出元素。如点、线、圆等。若将复杂对象看作由某些相对简单的对象按某种规则构造出来的，后者又是由更简单的图形对象构造出来的，则分解到最后就是各种图素。因此，可认为所有对象和场景都是各种图素的组合。</p>
-<p>段：具有逻辑意义的有限个图素（或体素）及其附加属性的集合称为段， 段可以嵌套，用一些简单的段和图素组成更复杂的段，可依据其组合画出层次树结构（说白了就类似于小时候的拼插玩具，用一点点小积木拼出大项目。）</p>
-<p>层：类似于ps的图层，将绘制不同图形的图层层叠合并到同一层上。</p>
+        <h3 id="计算机图形学（二）"><a href="#计算机图形学（二）" class="headerlink" title="计算机图形学（二）"></a>计算机图形学（二）</h3><h5 id="应用拉普拉斯算子的图像边缘处理"><a href="#应用拉普拉斯算子的图像边缘处理" class="headerlink" title="应用拉普拉斯算子的图像边缘处理"></a>应用拉普拉斯算子的图像边缘处理</h5><p>拉普拉斯算子是<em>n</em>维<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%B7%E7%A9%BA%E9%97%B4">欧几里德空间</a>中的一个二阶微分算子，定义为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A2%AF%E5%BA%A6">梯度</a>（▽f）的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%A3%E5%BA%A6">散度</a>（▽·f）。因此如果<em>f</em>是二阶可微的实函数，则<em>f</em>的拉普拉斯算子定义为：</p>
+<p><img src="https://bkimg.cdn.bcebos.com/formula/ac0202b54d24b802a843b5b90f6adbfb.svg" alt="img"></p>
+<p><em>f</em>的拉普拉斯算子也是笛卡尔<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9D%90%E6%A0%87%E7%B3%BB">坐标系</a><em>xi</em>中的所有<em>非混合</em>二阶<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%81%8F%E5%AF%BC%E6%95%B0">偏导数</a>：</p>
+<p><img src="https://bkimg.cdn.bcebos.com/formula/8b7ad3570105f5b4ec6985cbc3edb6da.svg"></p>
+<p>（以上摘自百度百科）</p>
+<p>那么看上去这么高深的拉普拉斯算子如何通俗易懂的理解呢？他又能用来作什么？</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26822364">https://www.zhihu.com/question/26822364</a></p>
+<p>我们可以看上述知乎的部分文章（应用于计算机视觉方面。）</p>
+<p><strong>总结：拉普拉斯能在计算中找到那些变化很突然的事件，（即图像的边缘信息）因此可以利用其来边缘检测，灰度值的”跃升”表示边缘的存在。</strong></p>
+<p>应用：图像锐化处理的作用是使灰度反差增强，从而使模糊图像变得更加清晰。图像模糊的实质就是图像受到平均运算或积分运算，因此可以对图像进行逆运算，如微分运算能够突出图像细节，使图像变得更为清晰。由于拉普拉斯是一种微分算子，它的应用可增强图像中灰度突变的区域，减弱灰度的缓慢变化区域。因此，锐化处理可选择拉普拉斯算子对原图像进行处理，产生描述灰度突变的图像，再将拉普拉斯图像与原始图像叠加而产生锐化图像。</p>
+<p>我们利用python+opencv来简单对图像进行拉普拉斯变化（将原始图像通过拉普拉斯变换后增强了图像中灰度突变处的对比度，使图像中小的细节部分得到增强并保留了图像的背景色调），来看一下效果吧！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="comment">#Python代码如下</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">kernel_size = <span class="number">3</span></span><br><span class="line">scale = <span class="number">1</span></span><br><span class="line">delta = <span class="number">0</span></span><br><span class="line">ddepth = cv2.CV_16S</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;test.jpg&#x27;</span>)</span><br><span class="line">img = cv2.GaussianBlur(img,(<span class="number">3</span>,<span class="number">3</span>),<span class="number">0</span>)</span><br><span class="line">gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">gray_lap = cv2.Laplacian(gray,ddepth,ksize = kernel_size,scale = scale,delta = delta)</span><br><span class="line">dst = cv2.convertScaleAbs(gray_lap)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;laplaceOperater&#x27;</span>,dst)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p>处理图像前：</p>
+<p><img src="https://gitee.com/lynnde/photos/raw/master/photoGraphic/test.jpg"></p>
+<p>处理后：</p>
+<p><img src="https://gitee.com/lynnde/photos/raw/master/photoGraphic/test_cout.jpg"></p>
 
     </div>
 
@@ -325,14 +324,11 @@ src="//music.163.com/outchain/player?type=2&id=571463522&auto=1&height=66"></ifr
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/03/02/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%89%EF%BC%89/" rel="prev" title="算法整理（三）">
-                  <i class="fa fa-chevron-left"></i> 算法整理（三）
+                <a href="/2021/03/11/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B9%9D%EF%BC%89/" rel="prev" title="python学习之路（九）">
+                  <i class="fa fa-chevron-left"></i> python学习之路（九）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/03/04/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="next" title="算法整理（四）">
-                  算法整理（四） <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
